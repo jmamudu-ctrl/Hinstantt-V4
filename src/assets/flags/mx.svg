@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-mx" viewBox="0 0 640 480">
+  <path fill="#fff" d="M0 0h640v480H0z"/>
+  <path fill="#006847" d="M0 0h213.3v480H0z"/>
+  <path fill="#ce1126" d="M426.7 0H640v480H426.7z"/>
+  <!-- simplified emblem: eagle on the nopal, wreath beneath -->
+  <ellipse cx="320" cy="300" rx="62" ry="22" fill="#a8862e"/>
+  <path fill="#5a7a2a" d="M296 300c-10-30 0-58 18-66 10 14 2 42 10 56 8-14 0-42 10-56 18 8 28 36 18 66z"/>
+  <path fill="#5a3a1a" d="M300 262c6-30 30-54 56-50-4 10-12 16-16 26 12-2 24 2 30 12-12 4-24 2-32 10 6 10 2 22-8 28-10-6-14-18-8-28-10-6-20-4-30 2 2-8 4-14 8-18z"/>
+</svg>

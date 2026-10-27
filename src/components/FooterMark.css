@@ -1,0 +1,16 @@
+/* the edge-to-edge wordmark row */
+.fm{position:relative; overflow:hidden; padding:clamp(18px, 2.2vw, 32px) clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 18px); background:#fff; box-shadow:inset 0 1px 0 rgba(0,169,224,.45)}   /* a white band, its top edge the blue line the footer's verticals end on */
+.fm::before{content:""; position:absolute; top:0; height:1px; width:16%; left:-16%; background:linear-gradient(90deg, rgba(0,169,224,0), rgba(0,169,224,.8) 70%, rgba(182,233,255,1)); box-shadow:0 0 6px rgba(0,169,224,.55); animation:fmLine 9s linear infinite}
+@keyframes fmLine{to{left:100%}}
+@media (prefers-reduced-motion: reduce){ .fm::before{display:none} }
+.fm-row{display:flex; align-items:flex-end; width:max-content; margin:0 auto; font-family:'Inter', system-ui, sans-serif; font-weight:700; line-height:.78; letter-spacing:-.055em; color:var(--ink); padding-top:.08em; user-select:none}
+.fm-g{position:relative; display:inline-block; transform-origin:50% 100%; will-change:transform;
+  /* the streak: a sky-blue copy smeared behind the glyph by the lean */
+  text-shadow:var(--trail, 0) 0 .06em rgba(0, 169, 224, var(--trail-a, 0)), calc(var(--trail, 0px) * .5) 0 .02em rgba(127, 211, 255, var(--trail-a, 0))}
+.fm-mark{width:1.02em; margin-right:.09em; align-self:flex-end; padding-bottom:.005em}
+.fm-mark svg{display:block; width:100%; height:auto; filter:drop-shadow(var(--trail, 0) 0 .03em rgba(0, 169, 224, var(--trail-a, 0)))}
+
+/* rise in, one glyph after another; the inner wrapper moves so the lean transform stays free */
+.fm .fm-g{opacity:0; translate:0 60%; transition:translate 1s cubic-bezier(.2,.9,.25,1), opacity .6s ease; transition-delay:calc(var(--d) * 55ms)}
+.fm.is-in .fm-g{opacity:1; translate:0 0}
+@media (prefers-reduced-motion: reduce){ .fm .fm-g{opacity:1; translate:none; transition:none} }

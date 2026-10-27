@@ -1,0 +1,92 @@
+/* ===== One back office: a pinned scroll-through of five modules ===== */
+.op2{position:relative; height:calc(var(--n) * 100vh); background:#050814; color:#fff}
+.op2-pin{position:sticky; top:0; height:100svh; overflow:hidden; isolation:isolate}
+.op2-img{position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; opacity:0; transform:scale(1.08);
+  transition:opacity .9s ease, transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.op2-img.is-on{opacity:1; transform:scale(calc(1.04 - var(--p, 0) * .04))}
+.op2-img.is-past{transform:scale(1)}
+.op2-shade{position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(0deg, rgba(5,8,20,.86) 0%, rgba(5,8,20,.35) 50%, rgba(5,8,20,.5) 100%), linear-gradient(90deg, rgba(5,8,20,.6) 0%, rgba(5,8,20,0) 65%)}
+.op2-inner{position:relative; height:100%; display:flex; flex-direction:column; padding-top:clamp(96px, 13vh, 128px); padding-bottom:clamp(28px, 5vh, 48px); box-sizing:border-box}
+.op2-head{display:flex; align-items:flex-start; justify-content:space-between; gap:24px}
+.op2-title{margin:0; max-width:15ch; font-family:'Lora', Georgia, serif; font-weight:600; font-size:clamp(26px, 2.6vw, 38px); line-height:1.1; letter-spacing:-.02em; color:rgba(255,255,255,.92)}
+.op2-cta{background:#fff; color:var(--ink); flex:0 0 auto}
+
+/* the headlines, one at a time, rising in as their photo arrives */
+.op2-slides{position:relative; flex:1; min-height:0}
+.op2-slide{position:absolute; left:0; bottom:clamp(28px, 6vh, 64px); max-width:720px; opacity:0; transform:translateY(24px); pointer-events:none;
+  transition:opacity .6s ease, transform .8s cubic-bezier(.2,.9,.25,1)}
+.op2-slide.is-on{opacity:1; transform:none; pointer-events:auto; transition-delay:.12s}
+.op2-tag{display:inline-flex; align-items:center; gap:8px; height:30px; padding:0 13px 0 11px; border-radius:999px; background:rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); font-size:12.5px; font-weight:500}
+.op2-tag i{width:6px; height:6px; margin-left:6px; border-radius:50%; background:#30d158}
+.op2-h{margin:18px 0 0; font-family:'Lora', Georgia, serif; font-weight:600; font-size:clamp(36px, 4.6vw, 68px); line-height:1.04; letter-spacing:-.03em; max-width:16ch}
+.op2-sub{margin:16px 0 0; max-width:580px; font-size:clamp(15px, 1.2vw, 17.5px); line-height:1.6; color:rgba(255,255,255,.76)}
+.op2-link{display:inline-flex; align-items:center; gap:8px; min-height:44px; margin-top:10px; font-size:15px; font-weight:600; color:#9fdcf5; text-decoration:none}
+.op2-link span{transition:transform .25s ease}
+.op2-link:hover span{transform:translateX(4px)}
+
+/* the five pills: done ones full, the current one filling as you scroll through it */
+.op2-pills{display:grid; grid-template-columns:repeat(var(--n), minmax(0, 1fr)); gap:8px}
+.op2-pill{position:relative; overflow:hidden; height:44px; border:0; border-radius:999px; padding:0 14px; cursor:pointer; font:500 13px/1 'Inter', sans-serif;
+  color:rgba(255,255,255,.7); background:rgba(255,255,255,.1); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); transition:color .3s ease}
+.op2-pill-fill{position:absolute; inset:0; transform-origin:left; transform:scaleX(0); background:rgba(255,255,255,.22); transition:transform .2s linear}
+.op2-pill.is-done .op2-pill-fill{transform:scaleX(1)}
+.op2-pill.is-on{color:var(--ink)}
+.op2-pill.is-on .op2-pill-fill{background:#fff; transform:scaleX(calc(.18 + var(--p, 0) * .82))}
+.op2-pill-t{position:relative; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block}
+.op2-pill:focus-visible{outline:2px solid #9fdcf5; outline-offset:2px}
+.op2 .op2-pill.is-on .op2-pill-t{color:var(--ink)}
+
+@media (max-width: 760px){
+  .op2-head{flex-direction:column; gap:16px}
+  .op2-cta{display:none}
+  .op2-slide{bottom:20px; right:0}
+  .op2-h{font-size:34px}
+  .op2-pills{gap:6px}
+  .op2-pill{padding:0 6px; font-size:11.5px}
+}
+@media (prefers-reduced-motion: reduce){ .op2-img, .op2-slide, .op2-pill-fill{transition:none} .op2-img.is-on{transform:none} }
+/* the layout's .wrap padding loads later and was overriding the top padding */
+.op2 .op2-inner{padding-top:calc(72px + clamp(28px, 5vh, 56px)); padding-bottom:clamp(28px, 5vh, 48px)}
+/* the active pill: solid white, its progress as a thin bar along the foot */
+.op2 .op2-pill.is-on{background:#fff; color:var(--ink)}
+.op2 .op2-pill.is-on .op2-pill-fill{inset:auto 14px 6px; height:2px; border-radius:2px; background:#00a9e0; transform:scaleX(var(--p, 0))}
+.op2-pill{display:flex; align-items:center; justify-content:center; gap:8px}
+.op2-pill-ic{position:relative; display:grid; place-items:center; flex:0 0 auto}
+/* phones: inactive pills are just their icon, the active one widens to show its name */
+@media (max-width: 760px){
+  .op2 .op2-pills{display:flex}
+  .op2 .op2-pill{flex:0 0 44px; width:44px; padding:0}
+  .op2 .op2-pill .op2-pill-t{display:none}
+  .op2 .op2-pill.is-on{flex:1 1 auto; padding:0 14px}
+  .op2 .op2-pill.is-on .op2-pill-t{display:block}
+}
+
+/* progress: pills before the current one are full; the current one shows how far you are
+   toward the next module (the last one stays full) */
+.op2 .op2-pill.is-on .op2-pill-fill{transform:scaleX(var(--p, 0))}
+
+/* ===== the module row, Revolut-style: plain labels, each with a thin progress track above;
+   no pills, no backgrounds ===== */
+.op2 .op2-pills{display:grid; grid-template-columns:repeat(var(--n), minmax(0, 1fr)); gap:clamp(12px, 2vw, 28px)}
+.op2 .op2-pill, .op2 .op2-pill.is-on, .op2 .op2-pill.is-done{
+  height:auto; min-height:44px; padding:14px 0 0; border-radius:0; background:none; -webkit-backdrop-filter:none; backdrop-filter:none; box-shadow:none;
+  display:flex; align-items:center; justify-content:flex-start; gap:8px; color:rgba(255,255,255,.5); font-size:14px; font-weight:500; text-align:left}
+.op2 .op2-pill:hover{color:rgba(255,255,255,.85)}
+.op2 .op2-pill.is-on{color:#fff}
+/* the track and its fill sit along the top edge */
+.op2 .op2-pill::before{content:""; position:absolute; left:0; right:0; top:0; height:2px; border-radius:2px; background:rgba(255,255,255,.2)}
+.op2 .op2-pill .op2-pill-fill, .op2 .op2-pill.is-on .op2-pill-fill{inset:0 auto auto 0; width:100%; height:2px; border-radius:2px; background:#fff; transform-origin:left; transform:scaleX(0)}
+.op2 .op2-pill.is-done .op2-pill-fill{transform:scaleX(1); background:rgba(255,255,255,.55)}
+.op2 .op2-pill.is-on .op2-pill-fill{transform:scaleX(var(--p, 0)); background:#fff}
+.op2 .op2-pill .op2-pill-t{color:inherit}
+.op2 .op2-pill:focus{outline:none}
+.op2 .op2-pill:focus-visible{outline:2px solid #9fdcf5; outline-offset:4px}
+@media (max-width: 760px){
+  .op2 .op2-pills{display:grid; gap:10px}
+  .op2 .op2-pill, .op2 .op2-pill.is-on{flex:none; width:auto; padding:12px 0 0; justify-content:center}
+  .op2 .op2-pill .op2-pill-t{display:none}
+  .op2 .op2-pill.is-on .op2-pill-t{display:none}
+}
+.op2 .op2-pills .op2-pill.is-on, .op2 .op2-pills .op2-pill.is-on .op2-pill-t{color:#fff}

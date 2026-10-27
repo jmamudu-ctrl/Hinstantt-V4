@@ -1,0 +1,158 @@
+/* ===== Automate the work: copy on the left, a white "how the agents work" flow on the right ===== */
+.ag{position:relative; overflow:hidden; min-height:100svh; box-sizing:border-box; display:flex; align-items:center; padding:clamp(80px, 10vh, 110px) 0; background:#fff; color:var(--ink); isolation:isolate}
+.ag-grid{position:relative; display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:clamp(32px, 5vw, 80px); align-items:center; width:100%; box-sizing:border-box}
+
+.ag-title{margin:0; max-width:600px; color:var(--ink)}
+.ag-title em{font-style:normal; color:var(--sky-ink)}
+.ag-sub{font-size:17px; line-height:1.6; color:rgba(0,21,33,.62); max-width:480px; margin:20px 0 0}
+.ag-link{display:inline-flex; align-items:center; gap:7px; margin-top:24px; font-size:14.5px; font-weight:600; color:var(--sky-ink)}
+
+/* the panel: white, a faint dashed grid, a lifted shadow; the expand button in its corner */
+.ag-panel{position:relative; width:100%; max-width:560px; margin-left:auto; border-radius:22px; background:#fff; overflow:hidden; color:var(--ink); box-shadow:0 1px 2px rgba(0,21,33,.04), 0 24px 60px -30px rgba(0,21,33,.22)}
+.ag-flow{position:relative; width:100%; aspect-ratio:560 / 640; font-size:12px}
+.ag-svg{position:absolute; inset:0; width:100%; height:100%}
+.ag-gridline{stroke:#ececef; stroke-width:1; stroke-dasharray:3 6}
+.ag-rail{fill:none; stroke:#dfe6f2; stroke-width:1.6; stroke-linecap:round}
+/* the live route: a dashed current drifting along it and a glowing packet riding it */
+.ag-current{fill:none; stroke:#3b82f6; stroke-width:1.6; stroke-linecap:round; stroke-dasharray:4 10; opacity:.7; animation:agDrift 1.2s linear infinite}
+@keyframes agDrift{to{stroke-dashoffset:-14}}
+.ag-packet{fill:#3b82f6; filter:drop-shadow(0 0 6px rgba(59,130,246,.9))}
+
+/* labels sit on white pills so the rails pass behind them */
+.ag-label{position:absolute; padding:3px 7px; margin-left:-7px; border-radius:6px; background:#fff; font-size:.92em; font-weight:500; letter-spacing:.005em; color:rgba(0,21,33,.5); white-space:nowrap}
+.ag-panel--large .ag-label{background:#fafafb}
+
+/* stages: soft grey tiles, the header's icon squares, ink type; the live one lifts and tints blue */
+.ag-chip, .ag-card{position:absolute; box-sizing:border-box; display:flex; align-items:center; gap:10px; border-radius:12px; background:#f4f4f6; transition:background .45s ease, box-shadow .45s ease, transform .45s cubic-bezier(.2,.9,.3,1)}
+.ag-chip{padding:0 10px; font-size:1em; font-weight:600; letter-spacing:-.005em; gap:8px}
+.ag-card{padding:0 14px}
+.ag-ic{width:28px; height:28px; border-radius:8px; display:grid; place-items:center; background:#e9e9ed; color:var(--ink); flex:0 0 auto; transition:background .45s, color .45s}
+.ag-chip .ag-ic{width:24px; height:24px; border-radius:7px}
+.ag-t{display:flex; flex-direction:column; min-width:0; gap:2px}
+.ag-t b{font-size:1.1em; font-weight:600; letter-spacing:-.01em; white-space:nowrap}
+.ag-t small{font-size:.92em; line-height:1.35; color:rgba(0,21,33,.55)}
+.ag-hub .ag-t small{white-space:normal}
+/* the agent's node: a dot that becomes a spinning gradient ring while it is reading */
+.ag-node{position:relative; width:14px; height:14px; border-radius:50%; margin-left:auto; flex:0 0 auto; display:grid; place-items:center; background:#fff; transition:width .4s, height .4s}
+.ag-node i{width:5px; height:5px; border-radius:50%; background:var(--ink)}
+.ag-agent.is-live .ag-node{width:28px; height:28px}
+.ag-agent.is-live .ag-node::before{content:""; position:absolute; inset:-3px; border-radius:50%; background:conic-gradient(from 200deg, #ffb36b, #ff7a9a, #8f7bff, #5ad8ff, #ffb36b); -webkit-mask:radial-gradient(circle, transparent 58%, #000 60%); mask:radial-gradient(circle, transparent 58%, #000 60%); animation:agSpin 4s linear infinite}
+.ag-agent.is-live .ag-node i{width:8px; height:8px; background:#3b82f6; animation:agPulse 1.6s ease-in-out infinite}
+
+.ag-chip.is-live, .ag-card.is-live{background:#eaf3ff; box-shadow:0 14px 30px -16px rgba(59,130,246,.5); transform:translateY(-2px)}
+.ag-chip.is-live .ag-ic, .ag-card.is-live .ag-ic{background:#3b82f6; color:#fff}
+.ag-card.is-ok{background:#ecf8f0; box-shadow:0 14px 30px -16px rgba(34,179,93,.45)}
+.ag-card.is-ok .ag-ic{background:#22b35d}
+.ag-card.is-ask{background:#fff4e5; box-shadow:0 14px 30px -16px rgba(255,159,10,.45)}
+.ag-card.is-ask .ag-ic{background:#ff9f0a}
+@keyframes agPulse{0%,100%{box-shadow:0 0 0 4px rgba(59,130,246,.18)}50%{box-shadow:0 0 0 7px rgba(59,130,246,.08)}}
+@keyframes agSpin{to{transform:rotate(360deg)}}
+
+/* the expand button: a small white square in the panel's corner */
+.ag-expand{position:absolute; top:14px; right:14px; width:36px; height:36px; border:0; border-radius:10px; display:grid; place-items:center; background:#fff; color:var(--ink); cursor:pointer; box-shadow:0 1px 2px rgba(0,21,33,.06), 0 8px 20px -10px rgba(0,21,33,.3); transition:background .18s, color .18s, transform .18s}
+.ag-expand:hover{background:var(--sky); color:#fff}
+.ag-expand:active{transform:scale(.95)}
+.ag-expand:focus:not(:focus-visible){outline:none}
+
+/* ===== the full view: the page blurs behind, a white sheet rises with the steps and a larger flow ===== */
+.ag-full{position:fixed; inset:0; z-index:80; display:grid; place-items:center; padding:24px; box-sizing:border-box}
+.ag-full-veil{position:absolute; inset:0; background:rgba(255,255,255,.55); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); animation:agVeil .3s cubic-bezier(.45,.05,.55,.95) both}
+.ag-full-sheet{position:relative; width:min(1180px, 100%); max-height:calc(100svh - 48px); overflow:auto; box-sizing:border-box; padding:clamp(28px, 4vw, 56px); border-radius:22px; background:#fff; box-shadow:0 1px 2px rgba(0,21,33,.05), 0 40px 90px -40px rgba(0,21,33,.35); animation:agSheet .45s cubic-bezier(.2,.9,.3,1) both}
+@keyframes agVeil{from{opacity:0}to{opacity:1}}
+@keyframes agSheet{from{opacity:0; transform:translateY(14px) scale(.98)}to{opacity:1; transform:none}}
+.ag-close{position:absolute; top:18px; right:18px; width:36px; height:36px; border:0; border-radius:10px; display:grid; place-items:center; background:#f4f4f6; color:var(--ink); cursor:pointer; transition:background .18s}
+.ag-close:hover{background:#e9e9ed}
+.ag-close:focus:not(:focus-visible){outline:none}
+.ag-full-grid{display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.1fr); gap:clamp(28px, 4vw, 64px); align-items:center}
+.ag-full-title{margin:0 0 24px; font-family:'Lora',Georgia,serif; font-weight:600; font-size:clamp(28px, 2.8vw, 38px); line-height:1.1; letter-spacing:-.02em; color:var(--ink)}
+.ag-steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:18px}
+.ag-steps li{display:flex; gap:14px; align-items:flex-start}
+.ag-steps b{display:block; font-size:15px; font-weight:600; letter-spacing:-.01em}
+.ag-steps p{margin:4px 0 0; font-size:14px; line-height:1.5; color:rgba(0,21,33,.62)}
+.ag-step-n{flex:0 0 auto; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; background:#f4f4f6; font-size:12px; font-weight:600; color:var(--ink)}
+.ag-agents{margin-top:26px}
+.ag-agents-h{display:block; font-size:12px; font-weight:500; color:rgba(0,21,33,.5); margin-bottom:10px}
+.ag-agents-row{display:flex; flex-wrap:wrap; gap:6px}
+.ag-agent-pill{display:inline-flex; align-items:center; height:26px; padding:0 10px; border-radius:999px; background:#f4f4f6; font-size:12px; font-weight:500; color:var(--ink)}
+.ag-full-cta{margin-top:26px}
+.ag-panel--large{max-width:none; margin:0; box-shadow:none; background:#fafafb}
+.ag-flow.is-large{font-size:13.5px}
+.ag-flow.is-large .ag-ic{width:32px; height:32px; border-radius:9px}
+.ag-flow.is-large .ag-chip .ag-ic{width:26px; height:26px}
+
+@media (max-width:899px){
+  .ag{min-height:0}
+  .ag-grid{grid-template-columns:1fr}
+  .ag-panel{margin:8px auto 0}
+  .ag-full-grid{grid-template-columns:1fr}
+  .ag-flow{font-size:10.5px}
+}
+@media (prefers-reduced-motion: reduce){ .ag-current, .ag-agent.is-live .ag-node::before, .ag-agent.is-live .ag-node i{animation:none} .ag-packet{display:none} .ag-full-veil, .ag-full-sheet{animation:none} }
+
+.ag .ag-grid > .ag-panel{background:none; box-shadow:none; border-radius:0; overflow:visible}   /* no panel: the diagram sits on the section's own grid */
+.ag-panel--large{background:#f7f8fa}
+
+/* ===== the flow, Stripe-diagram style: product fragments, fine lines, a blue pulse ===== */
+.sf{position:relative; width:100%; aspect-ratio:560 / 640; font-size:12px; color:var(--ink)}
+.sf-svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.sf-line{fill:none; stroke:#d9dfe7; stroke-width:1.3; stroke-linejoin:round; transition:stroke .4s, opacity .4s}
+.sf-line.is-lit{stroke:#8fd3ef}
+.sf-line.is-dim{opacity:.45}
+.sf-pulse{fill:none; stroke:#00a9e0; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:34 var(--len); stroke-dashoffset:34; animation:sfPulse var(--ms) cubic-bezier(.45,.05,.55,.95) forwards}
+@keyframes sfPulse{to{stroke-dashoffset:calc(-1 * var(--len))}}
+
+.sf-card{position:absolute; box-sizing:border-box; padding:12px 14px; border-radius:10px; background:#fff;
+  box-shadow:0 1px 1px rgba(0,21,33,.04), 0 6px 14px -6px rgba(0,21,33,.12), 0 18px 36px -22px rgba(0,21,33,.22);
+  transition:box-shadow .45s ease, transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s ease}
+.sf-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.sf-head b{font-size:1.04em; font-weight:600; letter-spacing:-.01em}
+.sf-row{font-size:.96em; color:rgba(0,21,33,.62); padding:3px 0}
+
+/* the event */
+.sf-sig{display:flex; align-items:center; gap:11px; animation:sfIn .6s cubic-bezier(.2,.9,.3,1) both}
+@keyframes sfIn{from{opacity:0; transform:translateY(-10px)}}
+.sf-ic{width:30px; height:30px; border-radius:8px; display:grid; place-items:center; background:#f1f2f5; color:var(--ink); flex:0 0 auto}
+.sf-main{flex:1; min-width:0; display:flex; flex-direction:column; line-height:1.3}
+.sf-main small{font-size:.84em; color:rgba(0,21,33,.45)}
+.sf-main b{font-size:1.06em; font-weight:600}
+.sf-main em{font-style:normal; font-size:.9em; color:rgba(0,21,33,.55); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.sf-amt{font-size:1.1em; font-weight:600; font-variant-numeric:tabular-nums; letter-spacing:-.01em}
+
+/* the agent */
+.sf-state{font-size:.86em; font-weight:500; color:rgba(0,21,33,.5)}
+.sf-ag.is-busy{box-shadow:0 0 0 1.5px rgba(0,169,224,.45), 0 6px 14px -6px rgba(0,21,33,.12), 0 18px 36px -22px rgba(0,21,33,.22)}
+.sf-ag.is-busy .sf-state{color:var(--sky-ink)}
+.sf-checks{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px}
+.sf-checks li{display:flex; align-items:center; gap:9px; padding:7px 9px; border-radius:8px; background:#f6f7f9; font-size:.96em; color:rgba(0,21,33,.45); transition:background .35s, color .35s}
+.sf-checks li i{width:16px; height:16px; border-radius:50%; display:grid; place-items:center; flex:0 0 auto; background:#e3e6eb; color:#fff; transition:background .35s}
+.sf-checks li.is-pass{color:var(--ink)}
+.sf-checks li.is-pass i{background:#22b35d}
+.sf-checks li.is-fail{color:#8a4d06; background:#fdf3e4}
+.sf-checks li.is-fail i{background:#ff9f0a}
+
+/* the outcomes: muted until theirs is the path taken */
+.sf-ok, .sf-ask{opacity:.5}
+.sf-ok.is-on, .sf-ask.is-on{opacity:1; transform:translateY(-2px)}
+.sf-ok.is-on{box-shadow:0 0 0 1.5px rgba(34,179,93,.45), 0 6px 14px -6px rgba(0,21,33,.12), 0 18px 36px -22px rgba(0,21,33,.22)}
+.sf-ask.is-on{box-shadow:0 0 0 1.5px rgba(255,159,10,.5), 0 6px 14px -6px rgba(0,21,33,.12), 0 18px 36px -22px rgba(0,21,33,.22)}
+.sf-tag{display:inline-flex; align-items:center; height:18px; padding:0 7px; border-radius:999px; font-size:.82em; font-weight:600}
+.sf-tag--ok{background:#ecf8f0; color:#1d7a45}
+.sf-tag--ask{background:#fdf3e4; color:#a8620a}
+.sf-btns{display:flex; gap:6px; margin-top:8px}
+.sf-btn{flex:1; display:grid; place-items:center; height:26px; border-radius:7px; background:#f1f2f5; font-size:.9em; font-weight:600}
+.sf-btn--go{background:var(--ink); color:#fff}
+
+/* the log */
+.sf-live{display:inline-flex; align-items:center; gap:5px; font-size:.86em; font-weight:500; color:#1d7a45}
+.sf-live i{width:6px; height:6px; border-radius:50%; background:#22b35d}
+.sf-log.is-on{box-shadow:0 0 0 1.5px rgba(0,169,224,.4), 0 6px 14px -6px rgba(0,21,33,.12), 0 18px 36px -22px rgba(0,21,33,.22)}
+.sf-entry{display:flex; align-items:center; gap:8px; padding:4px 0; font-size:.94em; color:rgba(0,21,33,.7)}
+.sf-entry i{width:6px; height:6px; border-radius:50%; flex:0 0 auto}
+.sf-entry i.ok{background:#22b35d}
+.sf-entry i.ask{background:#ff9f0a}
+.sf-entry.is-new{animation:sfIn .5s cubic-bezier(.2,.9,.3,1) both; color:var(--ink); font-weight:500}
+
+.sf.is-large{font-size:13px}
+@media (max-width:899px){ .sf{font-size:9.5px} .sf-card{padding:8px 10px} }
+@media (prefers-reduced-motion: reduce){ .sf-pulse{display:none} .sf-sig, .sf-entry.is-new{animation:none} }

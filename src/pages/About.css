@@ -1,0 +1,40 @@
+/* ===== About, on the shared kit ===== */
+.ab{background:var(--paper); color:var(--ink)}
+.ab-accent{font-style:italic; color:var(--sky-ink)}
+.ab-sec{position:relative; overflow:hidden; padding:clamp(88px, 11vh, 128px) 0}
+.ab-sec--tight{padding-top:0}
+.ab-sec .kg{margin-top:clamp(36px, 5vh, 56px)}
+.ab-sec--tight .kg{margin-top:0}
+
+.ab-story{display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(36px, 5vw, 88px); align-items:center}
+.ab-p{margin:18px 0 0; max-width:560px; font-size:clamp(15.5px, 1.2vw, 17px); line-height:1.65; color:rgba(0,21,33,.66)}
+.ab-quote{margin:0; font-family:'Lora', Georgia, serif; font-style:italic; font-weight:500; font-size:clamp(26px, 3vw, 40px); line-height:1.22; letter-spacing:-.015em; color:var(--ink)}
+
+.ab-stat-v{display:block; font-size:clamp(34px, 3.6vw, 52px); font-weight:500; letter-spacing:-.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums}
+.ab-stat-l{display:block; margin-top:12px; font-size:14px; font-weight:600}
+
+.ab-num{font-size:12.5px; font-weight:600; color:var(--sky-ink)}
+.ab-value-t{margin:12px 0 0; max-width:30ch; font-family:'Lora', Georgia, serif; font-weight:600; font-size:clamp(19px, 1.7vw, 23px); line-height:1.25; letter-spacing:-.01em}
+.ab-practice{margin:16px 0 0; font-size:13.5px; line-height:1.55; color:rgba(0,21,33,.74)}
+.ab-practice b{font-weight:600; color:var(--sky-ink)}
+
+.ab-map{position:relative; overflow:hidden; isolation:isolate; background:var(--dark); color:#fff; padding:clamp(96px, 13vh, 140px) 0}
+.ab-map-bg{position:absolute; inset:0; z-index:-1}
+.ab-map .ab-map-bg .ab-map-scene{position:absolute; inset:0; width:100%; height:100%; display:block; opacity:.3}
+.ab-map-svg{display:block; width:100%; height:auto; overflow:visible; margin-top:clamp(32px, 4vw, 52px)}
+.ab-arc{stroke-dasharray:100; stroke-dashoffset:100; animation:abArc 6s cubic-bezier(.45,.05,.55,.95) infinite; animation-delay:calc(var(--i) * .9s)}
+@keyframes abArc{0%{stroke-dashoffset:100}40%,60%{stroke-dashoffset:0}100%{stroke-dashoffset:-100}}
+.ab-pin-halo{fill:rgba(127,211,255,.18); transform-box:fill-box; transform-origin:center; animation:abHalo 2.6s ease-in-out infinite}
+@keyframes abHalo{50%{transform:scale(1.6); opacity:.3}}
+.ab-offices{display:flex; flex-wrap:wrap; gap:10px; margin-top:clamp(28px, 4vw, 44px)}
+.ab-office{display:inline-flex; align-items:center; gap:10px; padding:8px 16px 8px 8px; border-radius:999px; background:linear-gradient(180deg, rgba(48,60,88,.55), rgba(22,30,50,.66)); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px)}
+.ab-office img{width:26px; height:26px; border-radius:50%; object-fit:cover}
+.ab-office b{font-size:14px; font-weight:600}
+.ab-office small{font-size:12px; color:rgba(255,255,255,.5)}
+
+.ab-logos .kg-cell{display:grid; place-items:center; min-height:120px}
+.ab-logos img{height:30px; width:auto; max-width:100%; object-fit:contain; opacity:.55; filter:invert(1) saturate(0)}   /* white artwork, inverted for the light page */
+
+@media (max-width:900px){ .ab-story{grid-template-columns:1fr} }
+@media (prefers-reduced-motion: reduce){ .ab-arc{animation:none; stroke-dashoffset:0} .ab-pin-halo{animation:none} }
+.ab-accent--light{color:#9fdcf5}

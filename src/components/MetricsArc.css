@@ -1,0 +1,116 @@
+/* ===== The numbers as nested domes of glass ===== */
+.ma{position:relative; min-height:100svh; box-sizing:border-box; display:flex; align-items:center; padding:110px 0 90px; background:var(--paper); color:var(--ink); overflow:hidden; isolation:isolate}
+.ma-aurora{position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; z-index:-2}
+.ma-inner{position:relative; width:100%; box-sizing:border-box; display:flex; flex-direction:column}
+
+.ma-kicker{display:block; text-align:center; font-size:13px; font-weight:500; color:rgba(0,21,33,.55); margin-bottom:14px}
+.ma-title{margin:0 auto; max-width:760px; text-align:center; font-family:'Lora',Georgia,serif; font-weight:500; font-size:clamp(28px, 3.4vw, 46px); line-height:1.14; letter-spacing:-.02em; color:var(--ink)}
+
+/* the domes: half-ellipses on one baseline, all starting at the content's left edge;
+   the largest spans the full content width, the others scale with it in both axes */
+.ma-domes-wrap{width:100%; margin:clamp(40px, 6vh, 64px) 0 0}   /* the domes sit on the section's bottom edge and span its full width */
+.ma-domes{position:relative; width:100%; height:clamp(340px, calc(100svh - 380px), 600px)}
+.ma-dome{
+  position:absolute; left:0; bottom:0; width:calc(var(--w) * 100%); height:calc(var(--w) * 100%);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0; overflow:hidden;
+  /* frosted glass over the largest dome's glow: more frost on the smaller domes */
+  background:linear-gradient(180deg, rgba(255,255,255,.62) 0%, rgba(255,255,255,.34) 70%, rgba(255,255,255,.2) 100%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 -18px 40px -30px rgba(0,75,135,.25);
+  /* entrance: each dome grows out of the shared bottom-left corner, smallest first,
+     on a long soft ease, as if the four were unfolding from one point */
+  transform-origin:0% 100%; transform:scale(.18); opacity:0;
+  transition:transform 1.5s cubic-bezier(.16,1,.3,1), opacity .9s ease, background .45s ease, box-shadow .45s ease;
+  transition-delay:calc(var(--i) * .16s), calc(var(--i) * .16s), 0s, 0s;
+}
+.ma.is-in .ma-dome{transform:none; opacity:1}
+/* the largest dome is the window onto the hero's fluted glass */
+.ma-dome--3{background:#eef3fa; -webkit-backdrop-filter:none; backdrop-filter:none}
+.ma-fluted{position:absolute; inset:0; width:100%; height:100%; display:block}
+.ma-dome--3::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 60%); transition:opacity .45s ease}
+
+/* the figures sit on one row near the baseline, each centred in the band of its dome
+   that the next smaller dome leaves visible */
+.ma-fig{position:absolute; left:calc(var(--c) * 100%); bottom:clamp(28px, 5.5vh, 52px); transform:translateX(-50%); z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; white-space:nowrap; transition:opacity .35s ease, transform .45s cubic-bezier(.2,.9,.3,1)}
+.ma-num{position:relative; display:flex; align-items:baseline; font-size:clamp(26px, 3vw, 44px); font-weight:500; letter-spacing:-.035em; line-height:1; font-variant-numeric:tabular-nums; color:var(--ink)}
+.ma-plus{color:rgba(0,21,33,.32); margin-left:2px; transition:color .35s ease}
+.ma-desc{margin-top:8px; font-size:13.5px; line-height:1.4; color:rgba(0,21,33,.58); transition:color .35s ease}
+/* the icon waits beside the number and slides in on hover */
+.ma-fig-ic{position:absolute; right:calc(100% + 12px); top:50%; width:32px; height:32px; border-radius:9px; display:grid; place-items:center; background:#fff; color:var(--ink); opacity:0; transform:translate(8px, -50%) scale(.9); transition:opacity .35s ease, transform .45s cubic-bezier(.2,.9,.3,1), background .35s, color .35s; box-shadow:0 6px 16px -10px rgba(0,21,33,.35)}
+
+/* hover: the dome clears its frost so the glow comes through, the figure lifts, the icon
+   rises in, the plus turns sky blue; the other figures step back */
+.ma-dome{cursor:default}
+.ma-dome:hover{background:linear-gradient(180deg, rgba(255,255,255,.3) 0%, rgba(214,238,250,.28) 70%, rgba(182,233,255,.3) 100%); box-shadow:inset 0 1px 0 #fff, 0 -24px 50px -26px rgba(0,169,224,.45)}
+.ma-dome--3:hover{background:#eef3fa}
+.ma-dome--3:hover::after{opacity:0}
+.ma-fig:hover .ma-fig-ic{opacity:1; transform:translate(0, -50%); background:var(--sky); color:#fff}
+.ma-fig:hover .ma-plus{color:var(--sky)}
+.ma-fig:hover .ma-desc{color:var(--ink)}
+.ma-figs:has(.ma-fig:hover) .ma-fig:not(:hover){opacity:.4}
+
+@media (max-width:680px){
+  .ma{padding:96px 0 48px}
+  .ma-domes{height:300px}
+  .ma-num{font-size:20px}
+  .ma-desc{font-size:10.5px}
+}
+@media (prefers-reduced-motion: reduce){ .ma-dome{transition:none; transform:none; opacity:1} }
+
+
+
+/* the figures follow their domes in: up from the baseline and into focus once the dome
+   has mostly landed; hover lift takes over after */
+.ma-fig{opacity:0; translate:0 14px; filter:blur(6px); transition:opacity .7s ease, translate .9s cubic-bezier(.16,1,.3,1), filter .7s ease, transform .45s cubic-bezier(.2,.9,.3,1)}
+.ma.is-in .ma-fig{opacity:1; translate:0 0; filter:none; transition-delay:calc(.55s + var(--i) * .16s), calc(.55s + var(--i) * .16s), calc(.55s + var(--i) * .16s), 0s}
+.ma.is-in .ma-figs:has(.ma-fig:hover) .ma-fig:not(:hover){opacity:.4; transition-delay:0s}
+@media (prefers-reduced-motion: reduce){ .ma-fig{opacity:1; translate:none; filter:none; transition:none} }
+
+/* ===== the background rings: faint sky lines drawn in on entry, a glint travelling each,
+   nodes at the crossings, and dots that drop from them ===== */
+.ma-rings{position:absolute; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; overflow:visible}
+/* trim paths: each ring's visible stroke draws on from a start point until it closes, then
+   its start chases the end round and trims it away, on a slow staggered loop; a ghost of
+   the full ring stays at a whisper so the crossings still read */
+.ma-ring{fill:none; stroke:rgba(0,169,224,.26); stroke-width:1; stroke-linecap:round; stroke-dasharray:0 100; stroke-dashoffset:0}
+.ma.is-in .ma-ring{animation:maTrim calc(9s + var(--k) * 1.3s) cubic-bezier(.45,.05,.55,.95) infinite; animation-delay:calc(var(--k) * -1.7s)}
+@keyframes maTrim{0%{stroke-dasharray:0 100; stroke-dashoffset:0}45%{stroke-dasharray:100 0; stroke-dashoffset:0}55%{stroke-dasharray:100 0; stroke-dashoffset:0}100%{stroke-dasharray:0 100; stroke-dashoffset:-100}}
+.ma-ring-ghost{fill:none; stroke:rgba(0,169,224,.07); stroke-width:1}
+.ma-ring-glint{fill:none; stroke:rgba(140,220,255,.85); stroke-width:1.2; stroke-linecap:round; stroke-dasharray:5 95; opacity:0; filter:drop-shadow(0 0 4px rgba(0,169,224,.7));
+  animation:maGlint calc(14s + var(--k) * 2s) linear infinite; animation-delay:calc(var(--k) * -2.3s); transition:opacity 1s ease 2.4s}
+.ma.is-in .ma-ring-glint{opacity:1}
+@keyframes maGlint{to{stroke-dashoffset:-100}}
+.ma-node{fill:rgba(0,169,224,.45); opacity:0; transition:opacity .8s ease 2.6s}
+.ma.is-in .ma-node{opacity:1}
+.ma-drop{fill:#7fd3ff; filter:drop-shadow(0 0 5px rgba(0,169,224,.8)); animation:maDrop 2.4s cubic-bezier(.55,0,.9,.5) forwards}
+@keyframes maDrop{0%{transform:translateY(0); opacity:0}10%{opacity:.95}100%{transform:translateY(var(--fall)); opacity:0}}
+@media (prefers-reduced-motion: reduce){ .ma.is-in .ma-ring{animation:none; stroke-dasharray:none} .ma-ring-glint{animation:none; display:none} }
+
+/* the figures bar: one frosted container across the bottom of the domes, four equal
+   cells divided by the site's glowing vertical lines */
+.ma-domes-wrap{position:relative}
+.ma-figs{position:relative; z-index:3; width:100%;
+  display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); border-radius:22px;
+  background:rgba(255,255,255,.55); -webkit-backdrop-filter:blur(20px) saturate(150%); backdrop-filter:blur(20px) saturate(150%);
+  box-shadow:0 30px 60px -36px rgba(0,21,33,.35), inset 0 1px 0 rgba(255,255,255,.8)}
+.ma-figs .ma-fig{position:relative; left:auto; bottom:auto; transform:none; padding:clamp(22px, 3vh, 32px) 16px; cursor:default}
+.ma-figs .ma-fig + .ma-fig::before{content:""; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:linear-gradient(180deg, rgba(0,169,224,0), rgba(0,169,224,.35), rgba(0,169,224,0))}
+.ma-figs .ma-fig:hover{transform:translateY(-3px)}
+@media (max-width:700px){ .ma-figs{grid-template-columns:repeat(2, 1fr)} .ma-figs .ma-fig:nth-child(3)::before{display:none} }
+
+/* the figures, plain: no container, no hover, each icon always shown in black beside its number */
+.ma-figs{background:none; -webkit-backdrop-filter:none; backdrop-filter:none; box-shadow:none; border-radius:0}
+.ma-figs .ma-fig, .ma-figs .ma-fig:hover{transform:none; opacity:1}
+.ma .ma-figs:has(.ma-fig:hover) .ma-fig:not(:hover){opacity:1}
+.ma-figs .ma-fig-ic, .ma-figs .ma-fig:hover .ma-fig-ic{position:static; opacity:1; transform:none; width:auto; height:auto; margin-right:12px; align-self:center; background:none; color:var(--ink)}
+.ma-figs .ma-fig:hover .ma-plus{color:rgba(0,21,33,.32)}
+.ma-figs .ma-fig:hover .ma-desc{color:rgba(0,21,33,.58)}
+
+/* the circles, really faint: a whisper of line, no glow, no falling dots */
+.ma .ma-ring{stroke:rgba(0,169,224,.1)}
+.ma .ma-ring-ghost{stroke:rgba(0,169,224,.035)}
+.ma .ma-ring-glint{stroke:rgba(140,220,255,.35); filter:none}
+.ma .ma-node{fill:rgba(0,169,224,.18)}
+.ma .ma-drop{display:none}
+/* no hover dimming on the figures: every figure always at full strength */
+.ma.is-in .ma-figs:has(.ma-fig:hover) .ma-fig:not(:hover){opacity:1}

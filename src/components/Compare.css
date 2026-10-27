@@ -1,0 +1,56 @@
+/* ===== How Hinstantt compares: a dark panel on the fluted sky, a glass table ===== */
+.cp{padding:clamp(72px, 8vh, 112px) 0 0; background:var(--paper); color:var(--ink)}
+
+.cp-panel{position:relative; overflow:hidden; border-radius:26px; background:#040c1c; color:#fff; min-height:520px}
+.cp-sky{position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none}
+.cp-inner{position:relative; z-index:1; display:grid; grid-template-columns:minmax(220px, .9fr) minmax(0, 1.8fr); gap:40px; padding:clamp(28px, 4vw, 48px)}
+
+.cp-title{margin:0; font-family:'Lora', Georgia, serif; font-weight:500; font-size:clamp(23px, 2.4vw, 32px); line-height:1.18; letter-spacing:-.015em; color:#fff; text-align:right; padding-top:8px}
+
+/* the glass table */
+.cp-table{
+  position:relative; border-radius:20px; padding:18px 20px 10px;
+  background:rgba(255,255,255,.08);
+  -webkit-backdrop-filter:blur(20px) saturate(150%); backdrop-filter:blur(20px) saturate(150%);
+  box-shadow:inset 0 0 40px rgba(255,255,255,.04);
+}
+.cp-row{position:relative; z-index:1; display:grid; grid-template-columns:minmax(0, 1.6fr) 120px repeat(2, 1fr); align-items:center; min-height:62px}
+.cp-head{min-height:68px; align-items:flex-start; padding-top:4px}
+.cp-feature{font-size:13px; line-height:1.4; color:rgba(255,255,255,.86); padding:8px 18px 8px 0}
+.cp-col{display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:2px}
+.cp-col b{font-size:12.5px; font-weight:600; color:#fff}
+.cp-col small{font-size:10.5px; color:rgba(255,255,255,.55); max-width:16ch}
+.cp-us{display:flex; align-items:center; justify-content:center}
+.cp-pill{display:inline-flex; align-items:center; height:26px; padding:0 12px; border-radius:999px; background:rgba(255,255,255,.14); font-size:12px; font-weight:600; color:#fff; letter-spacing:.01em}
+
+/* the Hinstantt column lifted as a brighter pane behind its cells */
+.cp-lift{position:absolute; z-index:0; top:10px; bottom:4px; width:120px; border-radius:16px; background:rgba(255,255,255,.16); box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
+/* its left edge sits where the second column starts: feature column is 1.6fr of (1.6fr + 120px + 2fr) */
+.cp-table{--feat:calc((100% - 40px - 120px) * 1.6 / 3.6)}
+.cp-lift{left:calc(20px + var(--feat))}
+
+/* dots */
+.cp-dot{display:inline-block; width:11px; height:11px; border-radius:50%}
+.cp-dot.is-yes{background:#fff; box-shadow:0 0 10px rgba(255,255,255,.55)}
+.cp-dot.is-no{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.cp-dot.is-half{background:linear-gradient(90deg, #fff 50%, transparent 50%); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+
+.cp-foot{display:flex; justify-content:space-between; align-items:center; gap:16px; margin-top:18px}
+.cp-note{font-size:13px; font-weight:500; color:rgba(0,21,33,.6)}
+.cp-cta{padding:12px 44px}
+
+@media (max-width:900px){
+  .cp-inner{grid-template-columns:1fr; gap:22px}
+  .cp-title{text-align:left; padding-top:0}
+}
+@media (max-width:640px){
+  .cp-table{padding:12px 10px 6px}
+  .cp-row{grid-template-columns:minmax(0, 1.4fr) 72px repeat(2, 1fr)}
+  .cp-table{--feat:calc((100% - 20px - 72px) * 1.4 / 3.4)}
+  .cp-lift{left:calc(10px + var(--feat)); width:72px}
+  .cp-feature{font-size:12px; padding-right:10px}
+  .cp-col small{display:none}
+  .cp-pill{padding:0 8px; font-size:11px}
+  .cp-foot{flex-direction:column; align-items:stretch}
+  .cp-cta{justify-content:center}
+}

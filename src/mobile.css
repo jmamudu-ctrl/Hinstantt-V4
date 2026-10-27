@@ -1,0 +1,175 @@
+/* ===== Phones and small tablets =====
+   Loaded after every other stylesheet, so these refinements always win. */
+
+@media (max-width: 900px){
+  /* metrics: two figures to a row */
+  .ma-figs{grid-template-columns:repeat(2, minmax(0, 1fr)); row-gap:8px}
+  .ma-figs .ma-fig:nth-child(3)::before{display:none}
+  /* Contact: the form and the side cards stack into one column */
+  .ct .ct-body{grid-template-columns:1fr}
+  .ct .ct-grid2{grid-template-columns:1fr}
+}
+
+@media (max-width: 760px){
+  /* ---- type ---- */
+  .ma-desc{font-size:13px}
+
+  /* ---- product UI panels: four stats become a 2×2 grid ---- */
+  .ui-stats{grid-template-columns:repeat(2, minmax(0, 1fr))}
+
+
+}
+
+/* touch screens (phones and tablets): every target at least 44px */
+@media (max-width: 760px), (pointer: coarse){
+  .btn, .hg-btn, .ct-submit{min-height:44px; padding-top:0; padding-bottom:0; display:inline-flex; align-items:center}
+  .nav-burger{min-width:44px; min-height:44px; display:inline-grid; place-items:center}
+  .ag-link, .inv-link, .ct-card-link, .pp-cov-toggle, .np-feat-cta{min-height:44px; display:inline-flex; align-items:center}
+  .ag-expand{width:44px; height:44px}
+  .lg a[href^="#"]{min-height:44px; display:flex; align-items:center}
+  /* footer: each link is a 40px row, the columns keep a gutter and wrap long names */
+  .ft2-grid{column-gap:24px}
+  .ft2-group ul{gap:0}
+  .ft2-group a{display:flex; align-items:center; min-height:40px; line-height:1.3}
+  .ft2-logo{min-height:44px; align-items:center}
+  .ft2-cell{min-width:0}
+
+  .nav-logo{min-height:44px; align-items:center}
+}
+
+/* the agents diagram stacks on phones and tablets */
+@media (max-width: 900px){
+  .sf{aspect-ratio:auto; display:flex; flex-direction:column; gap:26px; font-size:13px; max-width:520px; margin:0 auto}
+  .sf-svg{display:none}
+  .sf-card{position:relative !important; left:auto !important; top:auto !important; width:100% !important; min-height:0 !important}
+  .sf-card + .sf-card::before{content:""; position:absolute; left:50%; top:-26px; width:1.5px; height:26px; background:linear-gradient(180deg, rgba(0,169,224,.15), rgba(0,169,224,.7))}
+  .sf-ok, .sf-ask{opacity:.6}
+  .ag .ag-grid > .ag-panel{max-width:none}
+  .ag-expand{display:none}   /* the stacked cards already spell the flow out; the full view adds nothing on a phone */
+  .sf-main small, .sf-tag{font-size:11.5px}
+}
+
+@media (max-width: 420px){
+  .kh-title{font-size:34px}
+  .kh-actions .btn, .hg-cta .hg-btn{flex:1 1 0; justify-content:center}
+}
+
+@media (max-width: 760px){
+  /* the tab bar: the light that runs its border needs a full pill; on a scrolling phone row it spills, so it rests */
+  .op-comet{display:none}
+  .op-bar .op-tab.is-active{padding-right:4px}
+  .op-bar .op-tab.is-active .op-tab-name{display:none}   /* icon only: the tag above names the module */
+  /* bento card tile: a smaller card high in the tile, its notes in a column below it */
+  .b2-card .ui-card-float{top:4%; width:58%}
+  .b2-card .ui-notes{left:6%; right:6%; bottom:6%}
+  .b2-card .ui-note{font-size:12px}
+}
+
+/* the bento's card tile on phones: a smaller card at the top, its notes in their own row below it */
+@media (max-width: 760px){
+  .k-corp .b2-stage{min-height:340px}
+  .k-corp .ui-card-float{top:2%; width:58%}
+  .k-corp .ui-notes{left:6%; right:6%; bottom:4%; gap:6px}
+  .k-corp .ui-note{font-size:12px; padding:8px 11px}
+}
+
+@media (max-width: 900px){
+  /* tab bar: tabs keep their size and the row scrolls, so the active tab has room for
+     its icon and name (it was being squeezed to 42px, pushing the icon out of sight) */
+  .op-bar .op-tab{flex:0 0 auto}
+  .op-bar .op-tabs{justify-content:flex-start; scroll-padding:0 16px}
+  /* metrics: no full-screen height on small screens, so no empty band under the figures */
+  .ma{min-height:0; padding:96px 0 72px}
+}
+
+@media (max-width: 760px){
+  /* spend by category: the department bars move under the categories */
+  .ui-split{grid-template-columns:minmax(0, 1fr); gap:18px}
+}
+
+/* the figures roll in with movement only: never start invisible, so a figure always shows */
+@keyframes uiRoll{from{transform:translateY(6px)}to{transform:none}}
+
+@media (max-width: 760px){
+  /* the product page's spend panel keeps to the categories, so it fits its stage */
+  .pp-live-stage .ui-bars--dep{display:none}
+  /* pricing: a gap between the title and its line once they stack */
+  .fx-sub{margin-top:16px}
+}
+
+@media (max-width: 760px){
+  .fx .fx-sub{margin-top:16px}
+  /* expense: on a phone the fields alone tell it (the receipt only squeezed them) */
+  .pp-live-stage .lu-expense{grid-template-columns:1fr}
+  .pp-live-stage .lu-expense .lu-receipt{display:none}
+  /* stablecoin convert: the two legs share the row without spilling */
+  .pp-live-stage .lu-swap{gap:6px}
+  .pp-live-stage .lu-leg{min-width:0; padding:10px}
+  .pp-live-stage .lu-leg b{font-size:15px}
+  .pp-live-stage .ui-panel.lu-ramp{width:92%}
+}
+
+/* legal contents numbers: readable size */
+.lg .lg-toc-n{font-size:11px}
+
+/* background grid lines: four on phones (the fifth drops out and the rest re-space evenly) */
+@media (max-width: 760px){ .grid-lines i:nth-child(5){display:none} }
+
+/* ===== phones: bento cells span the full width and stack over one another as you scroll =====
+   each card sticks just under the header, a few pixels lower than the one before, so the
+   next card slides up over it and the earlier ones peek out above like a stack */
+@media (max-width: 760px){
+  .b2-grid{display:block; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw)}
+  .b2-lines{display:none}
+  .b2-card{position:sticky; width:auto; min-height:0; height:min(74svh, 560px); margin:0 0 18px;
+    border-radius:26px; box-shadow:0 -14px 30px -18px rgba(0,21,33,.35); overflow:hidden}
+  .b2-card:nth-child(2){top:76px} .b2-card:nth-child(3){top:84px} .b2-card:nth-child(4){top:92px}
+  .b2-card:nth-child(5){top:100px} .b2-card:nth-child(6){top:108px} .b2-card:nth-child(7){top:116px}
+  .b2-card.tone-light{background:#fff}
+
+  .cmp-bento{display:block; margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw)}
+  .cmp-bento > .cmp{display:contents}
+  .cmp-bento .cmp-p, .cmp-bento .cmp-card, .cmp-bento .cmp-cell{position:sticky !important; top:76px; margin:0 0 14px; border-radius:26px;
+    box-shadow:0 -14px 30px -18px rgba(0,21,33,.3), 0 1px 2px rgba(0,21,33,.04)}
+  .cmp-bento .cmp > :nth-child(2){top:84px}
+  .cmp-bento .cmp > .cmp-low{top:92px}
+  .cmp-bento .cmp-stat{top:100px}
+  .cmp-bento .cmp-agent{top:108px}
+  .cmp-bento .cmp-card{min-height:300px}
+}
+
+/* phones: taller stacking cells too */
+@media (max-width: 760px){ .cmp-bento .cmp-p, .cmp-bento .cmp-cell{min-height:min(52svh, 400px)} .cmp-bento .cmp-p.cmp-low{min-height:180px} }
+
+/* phones: each bento card's panel sits in the middle of its card, with even margins */
+@media (max-width: 760px){
+  .b2-card .b2-stage{display:flex; flex-direction:column}
+  .b2-card .ui-stage:not(.ui-stage--3d){display:grid; place-items:center; padding:8px 0 24px}
+  .b2-card .ui-stage:not(.ui-stage--3d) > .ui-panel{position:relative; inset:auto; left:auto; right:auto; top:auto; bottom:auto;
+    width:calc(100% - 40px); max-width:420px; max-height:100%; transform:none; translate:none; margin:0 auto}
+  .b2-card .ui-stage:not(.ui-stage--3d) > .ui-panel.ui-ledger{padding-bottom:10px}
+  .b2-card .ui-card-float{left:50%; transform:translateX(-50%)}
+}
+/* phones: bento panels start at the top of their card (still centred side to side) */
+@media (max-width: 760px){ .b2-card .ui-stage:not(.ui-stage--3d){place-items:start center; padding-top:4px} }
+
+/* ===== every image overlay: black, from fully transparent at the top to 50% at the bottom ===== */
+.hg-shade, .kh-shade, .op2-shade{background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%) !important}
+.v2-rcard:not(.v2-rcard--cta){background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 100%), var(--img) var(--pos) / cover, #0b1630}
+
+/* ===== no pulsing dots: every agent / live dot is a small agent mark instead,
+   a thin ring crossed by a diagonal stroke, turning slowly (Grok-like) ===== */
+:is(.pp-log-agent, .ks-agent, .ui-live, .cmp-agent-top, .op2-tag, .op-cmp-tag, .sf-live, .pp-console-bar, .op-agent, .ag-node) > i{
+  position:relative; display:inline-block; flex:0 0 auto; width:12px !important; height:12px !important; margin:0; border-radius:50%;
+  background:none !important; box-shadow:inset 0 0 0 1.5px currentColor !important; color:inherit; animation:agentTurn 8s linear infinite !important}
+:is(.pp-log-agent, .ks-agent, .ui-live, .cmp-agent-top, .op2-tag, .op-cmp-tag, .sf-live, .pp-console-bar, .op-agent, .ag-node) > i::after{
+  content:""; position:absolute; left:50%; top:-2px; bottom:-2px; width:1.5px; margin-left:-.75px; border-radius:2px; background:currentColor; transform:rotate(45deg)}
+@keyframes agentTurn{to{transform:rotate(360deg)}}
+.ui-live{color:var(--ink) !important}
+.op2-tag > i, .op-cmp-tag > i{margin-left:6px}
+/* the map pins keep still */
+.ab-pin-halo, .ab-pin-ring{animation:none !important}
+@media (prefers-reduced-motion: reduce){ :is(.pp-log-agent, .ks-agent, .ui-live, .cmp-agent-top, .op2-tag, .op-cmp-tag, .sf-live, .pp-console-bar, .op-agent, .ag-node) > i{animation:none !important} }
+
+/* About: the office pills centred under the map */
+.ab-map .ab-offices{justify-content:center}

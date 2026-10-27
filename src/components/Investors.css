@@ -1,0 +1,28 @@
+.inv{background:var(--paper); color:var(--ink); padding:110px 0}
+.inv-head{max-width:640px}
+.inv-title{margin:16px 0 0; font-family:'Lora',Georgia,serif; font-weight:600; letter-spacing:-.02em; line-height:1.1; color:var(--ink); font-size:clamp(23px,2.8vw,34px)}
+.inv-sub{margin:16px 0 0; font-size:clamp(15px,1.5vw,17px); line-height:1.6; color:rgba(0,21,33,.62)}
+
+/* the marquee: full-bleed, the logos in grey, fading at the page edges */
+.inv-marquee{
+  position:relative; overflow:hidden; margin-top:48px;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+  mask-image:linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+.inv-tape{display:flex; align-items:center; width:max-content; gap:clamp(56px, 7vw, 112px); padding:8px clamp(28px, 3.5vw, 56px); animation:invScroll 42s linear infinite; will-change:transform}
+.inv-marquee:hover .inv-tape{animation-play-state:paused}
+@keyframes invScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* white logo files, so grey comes from the ink underneath: invert to ink, then soften */
+.inv-logo{flex:0 0 auto; width:auto; height:34px; max-width:150px; object-fit:contain; filter:invert(1) saturate(0); opacity:.42}
+
+@media (max-width:760px){
+  .inv-logo{height:26px}
+  .inv-tape{gap:40px; animation-duration:28s}
+}
+@media (max-width:560px){
+  .inv{padding:64px 0}
+}
+@media (prefers-reduced-motion: reduce){ .inv-tape{animation:none} .inv-marquee{mask-image:none; -webkit-mask-image:none; overflow-x:auto} }
+
+.inv-link{display:inline-flex; align-items:center; gap:7px; margin-top:20px; font-size:14.5px; font-weight:600; color:var(--sky-ink); transition:gap .15s}
+.inv-link:hover{gap:10px}

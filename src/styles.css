@@ -1,0 +1,968 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/6a1add70.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/4c2ef907.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/8261390e.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/fb907d94.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/1b714524.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/dc090492.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/e9c94d81.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/382ee1f9.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/12207d40.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/f799b143.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/0fd5159d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/f0fe4f55.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/0ce6a6a8.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/405d3a11.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/6714dc1b.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/b48fdeca.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/55b6564d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/f0fe4f55.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/0ce6a6a8.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/405d3a11.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/6714dc1b.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/b48fdeca.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/55b6564d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+
+  :root{
+    /* site grid: the hero's 8 equal glass ribs span --grid-max (centred, with
+       --grid-margin of plain space outside on narrower screens). Content sits
+       --grid-inset inside the outer rib edges: the header's logo and CTA, every
+       section, and the hero line up to it. */
+    --grid-max:1320px;
+    --grid-margin:clamp(12px, 3vw, 56px);
+    --grid-inset:32px;
+    /* Hinstantt palette (from design system) */
+    --ink:#001521;          /* navy, primary text */
+    --ink-2:#0b2230;
+    --ink-3:#364153;
+    --muted:#737885;
+    --muted-2:#98a3ae;
+    --line:#eef1f3;
+    --line-2:#dfe4e8;
+    --paper:#f7f8fa;        /* cool off-white, not warm */
+    /* section tones: the page is one continuous light canvas; dark lives in panels,
+       plus the two full-bleed sky sections (Metrics, One Platform) */
+    --light:#f7f8fa; --light-2:#ffffff; --cream:#fbf7f0;
+    --dark:#030d1b;  --dark-2:#001521; --dark-3:#040c1c;
+    --paper-2:#eef2f5;
+    --card:#ffffff;
+    --sky:#00A9E0;          /* Hinstantt sky, primary accent */
+    --sky-ink:#004B87;      /* Hinstantt deep blue */
+    --sky-soft:#B6E9FF;     /* Hinstantt light blue */
+    --sky-wash:#E8F7FF;
+    --violet:#C4A8FF;       /* Hinstantt violet accent */
+    --accent:#00A9E0;       /* single accent token */
+    --green:#22B35D;        /* Hinstantt green */
+    --amber:#e58a00;
+    --rose:#e34b59;
+  }
+  *{box-sizing:border-box}
+  @font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/lora.woff2") format('woff2');
+  }
+  @font-face {
+    font-family: 'Lora';
+    font-style: italic;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/lora-italic.woff2") format('woff2');
+  }
+
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11";letter-spacing:-.011em}
+  body{overflow-x:clip}   /* clip, not hidden: hidden makes body a scroll box and breaks sticky stacking */
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-feature-settings:"zero";letter-spacing:0}
+  .wrap{max-width:calc(var(--grid-max) + 2 * var(--grid-margin));margin:0 auto;padding:0 calc(var(--grid-margin) + var(--grid-inset))}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;font-weight:600;letter-spacing:-.02em}
+  .serif{font-family:'Instrument Serif', serif;font-weight:400;letter-spacing:-.02em}
+  em, i{font-family:inherit;font-style:normal;font-weight:inherit;letter-spacing:inherit}
+  .h-display{font-size:clamp(52px,6.4vw,88px);line-height:1;letter-spacing:-.04em;font-weight:600}
+  .h-section{font-size:clamp(34px,4vw,54px);line-height:1.05;letter-spacing:-.03em;font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:500;transition:transform .18s, background .18s, border-color .18s;white-space:nowrap}
+  .btn:focus:not(:focus-visible),a:focus:not(:focus-visible),button:focus:not(:focus-visible){outline:none}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:#0b2230;transform:translateY(-1px)}
+  .btn-accent{background:var(--sky);color:#fff}
+  .btn-accent:hover{background:#008cbf;transform:translateY(-1px)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#0b2230}
+  .btn-ghost{border:0;color:var(--ink);background:#fff}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .btn-sky{background:var(--sky);color:#fff}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* Logomark */
+  .logomark{display:inline-flex;align-items:center}
+
+  /* Animations */
+  @keyframes tickerX{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes skyPulse{0%,100%{opacity:.35}50%{opacity:1}}
+  @keyframes dash{to{stroke-dashoffset:-40}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.3);opacity:0}}
+  @keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+  @keyframes tickUp{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+  @keyframes typeOut{from{width:0}to{width:100%}}
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+  @keyframes heroFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}}
+  @keyframes auroraFlow{0%{transform:translate(0,0) scale(1)}33%{transform:translate(4%,-3%) scale(1.06)}66%{transform:translate(-3%,2%) scale(.98)}100%{transform:translate(0,0) scale(1)}}
+  @keyframes orbitPulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.4);opacity:0}}
+  @keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes tableRow{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes caret{50%{opacity:0}}
+  @keyframes scan{0%{top:0}100%{top:100%}}
+  @keyframes coinSpin{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+
+  .fade-up{animation:fadeUp .6s ease both}
+  ::selection{background:var(--ink);color:var(--paper)}
+
+  input:focus{outline:none}
+
+  /* ===== Navigation (after Ramp: a 60px bar; links beside the logo in 44px targets; a
+     white viewport hanging from the bar at the container's width) ===== */
+  .nav-bar{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;height:60px;column-gap:16px}
+  .nav-logo{justify-self:start;display:inline-flex}
+  .nav-desktop{justify-self:start;display:flex;align-items:center;gap:0}
+  .nav-right{justify-self:end;display:flex;align-items:center;gap:16px}
+  .nav-cta{display:flex;align-items:center;gap:16px}
+  .nav-signin{font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap}
+  .nav-demo{background:rgba(0,21,33,.06);color:var(--ink)}
+  .nav-top{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 10px;border-radius:999px;color:var(--ink);font-weight:500;font-size:14px;font-family:inherit;line-height:1;background:none;border:0;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent;transition:color .24s cubic-bezier(.45,.05,.55,.95),background .15s}
+  .nav-top:focus{outline:none}
+  .nav-top:focus-visible{background:rgba(0,21,33,.08)}
+  .nav-top.is-active{background:rgba(0,21,33,.05)}
+  /* while a menu is open the other links fall back to a hushed grey; the open one and
+     whichever is hovered stay ink */
+  .nav-desktop.has-open .nav-top{color:rgba(0,21,33,.6)}
+  .nav-desktop.has-open .nav-top:hover,.nav-desktop.has-open .nav-top.is-active{color:var(--ink)}
+  .nav-chev{transition:transform .25s cubic-bezier(.6,0,.2,.5)}
+  .nav-top.is-active .nav-chev{transform:rotate(180deg)}
+  .nav-shell .btn-primary{transition:background .3s ease, color .3s ease, transform .18s}
+
+  /* the viewport: square top, rounded bottom, a layered soft shadow. It unrolls from the
+     bar's edge (clip-path) while its height settles on the live content; closing rolls
+     it back up. */
+  .nav-pop{position:absolute;top:100%;left:0;right:0;z-index:39;pointer-events:none}
+  /* the page behind softens while a menu is open: a fixed veil under the bar (a sibling
+     of the shell, so its blur sees the page and not the bar's own glass) */
+  .nav-veil{position:fixed;inset:0;z-index:38;pointer-events:none;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);opacity:0;transition:opacity .3s cubic-bezier(.45,.05,.55,.95)}
+  .nav-veil.is-on{opacity:1}
+  .np-shell{
+    position:relative;width:100%;pointer-events:auto;overflow:hidden;
+    background:#fff;border-radius:0 0 8px 8px;transform-origin:top;
+    box-shadow:0 232px 65px rgba(0,0,0,.008), 0 35px 59px rgba(0,0,0,.03), 0 20px 50px rgba(0,0,0,.09);
+    opacity:0;clip-path:inset(0 -80px calc(100% + 320px));
+    transition:height .3s cubic-bezier(.45,.05,.55,.95), clip-path .3s cubic-bezier(.45,.05,.55,.95), opacity .24s cubic-bezier(.45,.05,.55,.95);
+    will-change:height,clip-path,opacity;
+  }
+  .nav-pop.is-open .np-shell{opacity:1;clip-path:inset(0 -80px -320px)}
+  /* content layers: the live one sets the height; an outgoing one slides away over it */
+  .np-layer{position:absolute;top:0;left:0;width:100%;will-change:opacity,transform}
+  .np-layer.is-rise{animation:npFadeIn .25s cubic-bezier(.4,0,.2,1) both, npRise .5s cubic-bezier(.4,0,.2,1) both}
+  .np-layer.is-from-end{animation:npFadeIn .25s cubic-bezier(.4,0,.2,1) both, npFromEnd .5s cubic-bezier(.4,0,.2,1) both}
+  .np-layer.is-from-start{animation:npFadeIn .25s cubic-bezier(.4,0,.2,1) both, npFromStart .5s cubic-bezier(.4,0,.2,1) both}
+  .np-layer.is-to-start{animation:npFadeOut .25s cubic-bezier(.4,0,.2,1) both, npToStart .5s cubic-bezier(.4,0,.2,1) both;pointer-events:none}
+  .np-layer.is-to-end{animation:npFadeOut .25s cubic-bezier(.4,0,.2,1) both, npToEnd .5s cubic-bezier(.4,0,.2,1) both;pointer-events:none}
+  @keyframes npFadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes npFadeOut{from{opacity:1}to{opacity:0}}
+  @keyframes npRise{from{transform:translateY(8px)}to{transform:translateY(0)}}
+  @keyframes npFromEnd{from{transform:translateX(20%)}to{transform:translateX(0)}}
+  @keyframes npFromStart{from{transform:translateX(-20%)}to{transform:translateX(0)}}
+  @keyframes npToStart{from{transform:translateX(0)}to{transform:translateX(-20%)}}
+  @keyframes npToEnd{from{transform:translateX(0)}to{transform:translateX(20%)}}
+
+  /* panel content: the groups in a four-column grid, the featured rail flush right */
+  /* every panel is at least as tall as the Product panel, so the shell never changes height between menus */
+  .np{display:grid;grid-template-columns:minmax(0,1fr) 256px;align-items:stretch;min-height:378px}
+  .np-groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 20px;padding:40px 28px 44px}
+  .np-group{min-width:0}
+  .np-cat{font-size:11.5px;font-weight:500;letter-spacing:.01em;color:rgba(0,21,33,.6);margin:0 0 6px 10px}
+  .np-items{display:flex;flex-direction:column;gap:16px}
+  .nav-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:8px;transition:background .15s}
+  .nav-item:hover{background:rgba(0,21,33,.04)}
+  .nav-item img{width:36px;height:36px;flex-shrink:0;display:block;border-radius:10px}
+  .nav-item > span{display:flex;flex-direction:column;min-width:0}
+  .nav-item-t{font-size:13px;font-weight:600;color:var(--ink);letter-spacing:-.005em;line-height:1.25;white-space:nowrap}
+  .nav-item-s{font-size:12px;color:rgba(0,21,33,.6);line-height:1.35;margin-top:4px;white-space:nowrap}
+  .nav-group-h{font-size:12px;font-weight:500;letter-spacing:.01em;color:var(--muted);margin:0 0 12px 10px}
+  .nav-item--plain{padding:7px 10px}
+
+  .np-feat{position:relative;overflow:hidden;display:flex;flex-direction:column;padding:40px 28px 36px;background:var(--paper);color:var(--ink);isolation:isolate;border-radius:0 0 8px 0}
+  /* the hero's own scene, in miniature: the light fluted glass with its drifting glow */
+  /* the ribs run at 45 degrees: the canvas is oversized and turned, so it still covers the corners */
+  .np-feat-bg{position:absolute;left:50%;top:50%;z-index:-1;width:220%;height:140%;display:block;transform:translate(-50%,-50%) rotate(45deg)}
+  /* the title stacks one word per line */
+  .np-feat-title{font-family:'Lora',Georgia,serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1.04;margin:0;width:min-content;mix-blend-mode:multiply}
+  .np-feat-blurb{font-size:13.5px;color:rgba(0,21,33,.66);line-height:1.45;margin-top:14px}
+  /* the rail's call to action: a small blue pill, the app's button size */
+  .np-feat-cta{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 16px;border-radius:999px;background:var(--sky);color:#fff;font-size:13px;font-weight:600;transition:background .18s,transform .18s}
+  .np-feat-cta svg{width:13px;height:13px}
+  .np-feat-cta:hover{background:#13b4e8}
+  .np-feat-cta:active{transform:scale(.97)}
+
+  /* Mobile drawer (Ramp-style drill-in) */
+  .nav-mobile{position:fixed;inset:0;z-index:60;background:var(--paper);display:flex;flex-direction:column}
+  .nav-mobile-head{display:flex;align-items:center;justify-content:space-between;height:66px;padding:0 16px 0 20px;border-bottom:0;flex-shrink:0}
+  .nav-back{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:var(--ink)}
+  .nav-x{display:inline-flex;padding:9px;border-radius:9px;color:var(--ink);background:rgba(0,21,33,.05)}
+  .nav-mobile-body{flex:1;overflow-y:auto;padding:8px 16px 16px;animation:navSlide .22s ease both}
+  @keyframes navSlide{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+  .nav-m-row{display:flex;align-items:center;justify-content:space-between;width:100%;padding:18px 6px;font-size:18px;font-weight:600;letter-spacing:-.02em;color:var(--ink);border-bottom:0}
+  .nav-m-row svg{color:var(--muted)}
+  .nav-m-group{padding:14px 0 6px}
+  .nav-m-group .nav-item{padding:11px 6px}
+  .nav-mobile-foot{display:flex;gap:10px;padding:14px 16px calc(14px + env(safe-area-inset-bottom));border-top:0;flex-shrink:0}
+  @media (min-width:881px){ .nav-mobile{display:none} }
+
+  /* Footer */
+  .ft-grid{display:grid;grid-template-columns:1.6fr 1.8fr 1fr;gap:40px;padding-bottom:56px;border-bottom:0}
+  .ft-col-h{font-size:13px;color:#fff;margin-bottom:18px;font-weight:600}
+  .ft-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+  .ft-products-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:11px 24px}
+  .ft-stack{display:flex;flex-direction:column;gap:34px}
+  .ft-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.45);padding:24px 0 32px;border-top:0}
+  .ft-bottom-links{display:flex;gap:20px}
+  .ft-wordmark{font-size:clamp(64px,20vw,260px);font-weight:700;letter-spacing:-.045em;line-height:.8;color:#fff}
+  .ft-wordmark-row{display:flex;justify-content:center;align-items:center;gap:clamp(12px,2vw,28px)}
+  .ft-logomark-big svg{width:clamp(48px,14vw,180px);height:auto}
+
+  @media (max-width:900px){
+    .ft-grid{grid-template-columns:1fr 1fr;gap:40px 28px}
+    .ft-brand{grid-column:1 / -1}
+  }
+  @media (max-width:560px){
+    .ft-grid{grid-template-columns:1fr;gap:36px}
+    .ft-brand{grid-column:auto}
+    .ft-bottom{flex-direction:column;gap:16px;align-items:flex-start}
+  }
+
+  /* ===== Responsive: page-wide ===== */
+  .nav-burger{display:none}
+  @media (max-width:880px){
+
+    /* Nav */
+    .nav-desktop{display:none !important}
+    .nav-cta{display:none !important}
+    .nav-burger{display:inline-flex !important}
+    .nav-right{grid-column:3 / 4; justify-self:end}
+
+    /* Hero */
+    .hero-h1{font-size:clamp(34px,8.8vw,60px) !important}
+    .hero-eyebrow{flex-wrap:wrap !important;justify-content:center !important;max-width:100% !important}
+    .hero-sub{font-size:15.5px !important}
+    .hero-cta-row{flex-direction:column !important;align-items:stretch !important;width:100% !important;max-width:440px !important}
+    .hero-form{min-width:0 !important;width:100% !important}
+    .hero-watch{justify-content:center !important}
+    .hero-stats{grid-template-columns:repeat(2,1fr) !important;column-gap:28px !important;row-gap:28px !important}
+
+    /* Heading | intro splits */
+    .r-sechead{grid-template-columns:1fr !important;gap:18px !important;align-items:start !important;margin-bottom:40px !important}
+    .r-split{grid-template-columns:1fr !important;gap:40px !important}
+
+    /* Card grids */
+    .r-tiles2{grid-template-columns:1fr !important;gap:16px !important}
+    .r-bento6{grid-template-columns:1fr !important}
+    .r-bento6 .bento-tile{grid-column:auto !important}
+    .r-bento4{grid-template-columns:repeat(2,1fr) !important}
+    .r-bento3{grid-template-columns:repeat(2,1fr) !important}
+  }
+  @media (max-width:560px){
+    .r-bento4{grid-template-columns:1fr !important}
+    .r-bento3{grid-template-columns:1fr !important}
+  }
+
+  /* Per-section mobile tuning */
+  @media (max-width:880px){
+    .r-sec{padding-top:60px !important;padding-bottom:60px !important}
+    .r-sec-b{padding-bottom:60px !important}
+    .h-display{font-size:clamp(34px,9vw,52px) !important}
+    .h-section{font-size:clamp(25px,6.4vw,36px) !important}
+    .r-quote{font-size:clamp(23px,6vw,34px) !important}
+    .cust-tile{aspect-ratio:auto !important;min-height:128px !important}
+  }
+
+
+.logorow-item:hover{opacity:1 !important}
+
+/* ===== Page-wide scroll reveal ===== */
+html.reveal-on .reveal{
+  opacity:0; transform:translateY(40px) scale(.985);
+  transition:opacity .95s cubic-bezier(.16,1,.3,1), transform .95s cubic-bezier(.16,1,.3,1);
+  will-change:opacity, transform;
+}
+html.reveal-on .reveal.in{opacity:1; transform:none}
+/* Investors and TrustedBand are stacked full-bleed navy sections. Two things made a near-white
+   strip show between them while scrolling: (1) the reveal fades them from opacity:0, briefly
+   exposing the light page background, and (2) the reveal's will-change:transform promotes each to
+   its own compositing layer, and because their heights resolve to fractional pixels (clamp-based
+   padding/gaps) the layer boundary lands off the pixel grid, leaking a 1px hairline of the page
+   background that shifts as you scroll. Pin both solid, and stop promoting them to layers. The 1px
+   overlap that closes the seam lives on .trb in TrustedBand.css. */
+html.reveal-on .inv.reveal,
+html.reveal-on .inv.reveal.in,
+html.reveal-on .trb.reveal,
+html.reveal-on .trb.reveal.in,
+html.reveal-on .pp-agent.reveal,
+html.reveal-on .pp-agent.reveal.in{
+  opacity:1 !important; transform:none !important; will-change:auto !important; transition:none !important;
+}
+
+/* card grids cascade tile-by-tile for a fluid feel */
+html.reveal-on .reveal-stagger > *{
+  opacity:0; transform:translateY(34px) scale(.95);
+  transition:opacity .72s cubic-bezier(.16,1,.3,1), transform .72s cubic-bezier(.16,1,.3,1);
+  will-change:opacity, transform;
+}
+html.reveal-on .reveal-stagger.in > *{opacity:1; transform:none}
+html.reveal-on .reveal-stagger.in > *:nth-child(1){transition-delay:.00s}
+html.reveal-on .reveal-stagger.in > *:nth-child(2){transition-delay:.08s}
+html.reveal-on .reveal-stagger.in > *:nth-child(3){transition-delay:.16s}
+html.reveal-on .reveal-stagger.in > *:nth-child(4){transition-delay:.24s}
+html.reveal-on .reveal-stagger.in > *:nth-child(5){transition-delay:.32s}
+html.reveal-on .reveal-stagger.in > *:nth-child(6){transition-delay:.40s}
+html.reveal-on .reveal-stagger.in > *:nth-child(7){transition-delay:.48s}
+html.reveal-on .reveal-stagger.in > *:nth-child(n+8){transition-delay:.54s}
+
+@media (prefers-reduced-motion: reduce){
+  html.reveal-on .reveal, html.reveal-on .reveal-stagger > *{opacity:1 !important; transform:none !important; transition:none !important}
+}
+
+/* About hero motion */
+@keyframes auroraFlow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(22px,-18px) scale(1.07)}}
+@keyframes aboutOrbit{to{transform:rotate(360deg)}}
+.ab-hero-aurora{animation:auroraFlow 22s ease-in-out infinite}
+.ab-hero-aurora.is-2{animation-duration:30s; animation-direction:reverse}
+.ab-hero-orbit{transform-origin:center; animation:aboutOrbit 90s linear infinite}
+@media (prefers-reduced-motion: reduce){ .ab-hero-aurora, .ab-hero-orbit{animation:none !important} }
+
+@keyframes abPinPulse{0%{transform:scale(.5);opacity:.7}70%{opacity:0}100%{transform:scale(2.6);opacity:0}}
+.ab-pin-ring{transform-box:fill-box; transform-origin:center; animation:abPinPulse 2.8s ease-out infinite}
+
+/* Header: a 25px blur layer always on (as Ramp), under a white tint that firms a touch
+   once you scroll (--glass 0..1 from Nav); fully on for pages without a hero. */
+.nav-shell{
+  --glass:0; --glass-min:0;
+  --g:max(var(--glass), var(--glass-min));
+  background:rgba(255,255,255,calc(.72 + .2 * var(--g)));
+  -webkit-backdrop-filter:blur(25px); backdrop-filter:blur(25px);
+  border-bottom:0; box-shadow:none;
+  transition:background .25s ease;
+}
+.nav-shell.is-forced{--glass-min:1}
+
+/* text entrances (motion.js sets the start state; nothing hides when JS is off) */
+[data-enter], [data-enter-follow]{will-change:transform, opacity}
+html.lenis, html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+
+/* ===== Grid lines: the same span as the hero's eight ribs (inside --grid-margin, capped at
+   --grid-max), nine boundaries, each a faint blue line with a short glow flowing down it */
+.grid-lines{position:absolute; top:0; bottom:0; left:50%; transform:translateX(-50%); width:min(var(--grid-max), 100% - 2 * var(--grid-margin)); z-index:-1; display:flex; justify-content:space-between; pointer-events:none}
+.grid-lines i{position:relative; width:1px; height:100%; overflow:hidden; background:linear-gradient(180deg, rgba(0,169,224,0), rgba(0,169,224,.09) 12%, rgba(0,169,224,.09) 88%, rgba(0,169,224,0))}
+.grid-lines i::after{content:""; position:absolute; left:0; width:1px; height:22%; top:-22%;
+  background:linear-gradient(180deg, rgba(0,169,224,0), rgba(0,169,224,.65) 70%, rgba(182,233,255,.95));
+  box-shadow:0 0 6px rgba(0,169,224,.5);
+  animation:gridFlow calc(6s + var(--k) * .7s) linear infinite; animation-delay:calc(var(--k) * -1.9s)}
+@keyframes gridFlow{to{top:100%}}
+@media (prefers-reduced-motion: reduce){ .grid-lines i::after{display:none} }
+
+/* ===== Button hover, site-wide: the button turns to a soft white pill with a drifting
+   blue, pink and peach glow inside it (like a frosted lens catching colour) ===== */
+.btn, .hg-btn, .op-cta, .np-feat-cta{position:relative; isolation:isolate; overflow:hidden;
+  transition:background .35s ease, color .35s ease, box-shadow .35s ease, transform .18s ease}
+.btn::before, .hg-btn::before, .op-cta::before, .np-feat-cta::before{
+  content:""; position:absolute; inset:-60% -30%; z-index:-1; pointer-events:none; opacity:0;
+  background:
+    radial-gradient(26% 46% at 68% 34%, rgba(77,150,255,.95), transparent 70%),
+    radial-gradient(24% 42% at 58% 78%, rgba(255,128,160,.85), transparent 70%),
+    radial-gradient(22% 40% at 86% 58%, rgba(255,206,160,.9), transparent 70%);
+  filter:blur(9px); transition:opacity .4s ease;
+  animation:btnGlow 3.6s ease-in-out infinite alternate; animation-play-state:paused}
+.btn:hover, .hg-btn:hover, .op-cta:hover, .np-feat-cta:hover{
+  background:#f6f6f8 !important; color:#2a2f45 !important; transform:translateY(-1px);
+  box-shadow:0 14px 28px -16px rgba(0,21,33,.45), 0 2px 5px rgba(0,21,33,.06), inset 0 1px 0 #fff}
+.btn:hover::before, .hg-btn:hover::before, .op-cta:hover::before, .np-feat-cta:hover::before{opacity:1; animation-play-state:running}
+@keyframes btnGlow{from{transform:translate(-6%, 4%) rotate(-4deg)}to{transform:translate(6%, -5%) rotate(5deg)}}
+@media (prefers-reduced-motion: reduce){ .btn::before, .hg-btn::before, .op-cta::before, .np-feat-cta::before{animation:none} }
+
+/* ===== Footer, Stripe-style: light cells divided by the site's glowing lines ===== */
+.ft2{position:relative; background:#f7f8fa; color:var(--ink); overflow:hidden; min-height:80svh; display:flex; flex-direction:column}
+.ft2 > .wrap{width:100%; box-sizing:border-box}   /* full width again inside the column layout */
+.ft2 > .wrap:first-of-type{flex:1 0 auto; display:flex; flex-direction:column}
+.ft2 > .wrap:first-of-type .ft2-inner{flex:1 0 auto}
+.ft2 > .wrap:first-of-type .ft2-inner{display:flex; flex-direction:column}
+.ft2 > .wrap:first-of-type .ft2-grid{flex:1 0 auto}
+
+.ft2-hline--mark::after{animation-delay:-7s}
+.ft2-inner{position:relative}
+.ft2-grid{display:grid; grid-template-columns:1.35fr repeat(4, minmax(0, 1fr)); min-height:340px}
+.ft2-cell{padding:clamp(56px, 7vh, 80px) clamp(28px, 2.6vw, 44px) clamp(64px, 8vh, 96px); display:flex; flex-direction:column; gap:36px}
+.ft2-cell:first-child{padding-left:0}
+.ft2-brand p{margin:0; max-width:260px; font-size:13.5px; line-height:1.55; color:rgba(0,21,33,.6)}
+.ft2-logo{display:inline-flex; color:var(--ink)}
+.ft2-h{font-size:13px; font-weight:600; letter-spacing:-.005em; color:var(--ink); margin-bottom:14px}
+.ft2-group ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px}
+.ft2-group a{font-size:13px; color:rgba(0,21,33,.58); transition:color .18s ease}
+.ft2-group a:hover{color:var(--sky-ink)}
+/* the bottom bar sits on the same grid, each part inside its own cell */
+.ft2-bottom{display:grid; grid-template-columns:1.35fr repeat(4, minmax(0, 1fr)); font-size:12px; color:rgba(0,21,33,.5)}
+.ft2-bottom > *{padding:clamp(28px, 3.4vh, 40px) clamp(28px, 2.6vw, 44px)}
+.ft2-bottom > :first-child{padding-left:0}
+.ft2-note{grid-column:5; line-height:1.6}
+
+/* the glowing lines: verticals at every cell edge running the footer's full height,
+   horizontals running edge to edge; a brighter streak flows along each */
+.ft2-vlines{position:absolute; z-index:2; top:0; bottom:0; left:0; right:0; display:grid; grid-template-columns:1.35fr repeat(4, minmax(0, 1fr)) 0; pointer-events:none}
+.ft2-vlines i{position:relative; clip-path:inset(0 -8px)}   /* clip the streak top and bottom only, so the zero-width last track still shows its line */
+.ft2-vlines i::before{content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:rgba(0,169,224,.2)}
+.ft2-vlines i::after{content:""; position:absolute; left:0; width:1px; height:30%; top:-30%; background:linear-gradient(180deg, rgba(0,169,224,0), rgba(0,169,224,.7) 70%, rgba(182,233,255,.95)); box-shadow:0 0 6px rgba(0,169,224,.5);
+  animation:ft2V calc(6s + var(--k) * .8s) linear infinite; animation-delay:calc(var(--k) * -1.6s)}
+.ft2-vlines i:first-child::before, .ft2-vlines i:first-child::after{display:none}
+.ft2-hline{position:relative; height:1px; overflow:hidden; background:rgba(0,169,224,.2)}
+.ft2-hline::after{content:""; position:absolute; top:0; height:1px; width:14%; left:-14%; background:linear-gradient(90deg, rgba(0,169,224,0), rgba(0,169,224,.7) 70%, rgba(182,233,255,.95)); box-shadow:0 0 6px rgba(0,169,224,.5); animation:ft2H 10s linear infinite}
+.ft2-hline--top::after{animation-delay:-4s}
+@keyframes ft2V{to{top:100%}}
+@keyframes ft2H{to{left:100%}}
+@media (max-width:900px){
+  .ft2-grid{grid-template-columns:1fr 1fr}
+  .ft2-brand{grid-column:1 / -1}
+  .ft2-cell, .ft2-cell:first-child{padding:28px 0}
+  .ft2-vlines{display:none}
+  .ft2-bottom{grid-template-columns:1fr}
+  .ft2-bottom > *{padding:20px 0}
+  .ft2-note{grid-column:auto}
+}
+@media (prefers-reduced-motion: reduce){ .ft2-vlines i::after, .ft2-hline::after{display:none} }
+
+/* ===== The logomark as the cursor, on the big visual sections (light mark on dark
+   sections, dark mark on light ones); anything clickable keeps the normal pointer ===== */
+:root{--cursor-mark-ink:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2230%22%20height%3D%2227%22%20viewBox%3D%22-2%20-2%2023.35%2020.668%22%3E%3Cg%20fill%3D%22%23001521%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%20paint-order%3D%22stroke%22%3E%3Cpath%20d%3D%22M0%200L0%2016.668L4.147%2016.668L12.573%208.334L4.147%200Z%22/%3E%3Cpath%20d%3D%22M12.574%200L12.574%2016.668L16.721%2016.668L19.351%208.334L16.721%200Z%22/%3E%3C/g%3E%3C/svg%3E") 15 13, auto; --cursor-mark-white:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2230%22%20height%3D%2227%22%20viewBox%3D%22-2%20-2%2023.35%2020.668%22%3E%3Cg%20fill%3D%22%23ffffff%22%20stroke%3D%22%23001521%22%20stroke-width%3D%221.6%22%20stroke-linejoin%3D%22round%22%20paint-order%3D%22stroke%22%3E%3Cpath%20d%3D%22M0%200L0%2016.668L4.147%2016.668L12.573%208.334L4.147%200Z%22/%3E%3Cpath%20d%3D%22M12.574%200L12.574%2016.668L16.721%2016.668L19.351%208.334L16.721%200Z%22/%3E%3C/g%3E%3C/svg%3E") 15 13, auto}
+.hg, .fm{cursor:var(--cursor-mark-ink)}
+.trb, .kc, .pp-agent, .ab-map{cursor:var(--cursor-mark-white)}
+:is(.hg, .fm, .trb, .kc, .pp-agent, .ab-map) :is(a, button, [role="button"], input, select, textarea, label){cursor:pointer}
+
+
+/* ===== One subscription: light, glowing-line cells ===== */
+.fx{position:relative; overflow:hidden; background:var(--paper); padding:clamp(96px, 12vh, 140px) 0}
+.fx-head{display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(24px, 4vw, 64px); align-items:end}
+.fx-accent{font-style:italic; color:var(--sky-ink)}
+.fx-sub{margin:0; max-width:440px; font-size:clamp(15px, 1.15vw, 17px); line-height:1.6; color:rgba(0,21,33,.62)}
+.fx-grid{margin-top:clamp(40px, 5vh, 60px)}
+.fx-list{list-style:none; margin:18px 0 0; padding:0; display:flex; flex-direction:column; gap:12px}
+.fx-list li{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:500; color:rgba(0,21,33,.72)}
+.fx-check{width:20px; height:20px; border-radius:6px; display:grid; place-items:center; background:#e9f6fc; color:var(--sky-ink); flex:0 0 auto}
+.fx-cta{display:flex; gap:10px; margin-top:clamp(36px, 5vh, 52px)}
+@media (max-width:900px){ .fx-head{grid-template-columns:1fr} }
+
+/* nav menu icons: a Hugeicon in the site's grey icon square */
+.nav-item > .nav-ic{width:36px; height:36px; flex:0 0 auto; display:grid; place-items:center; border-radius:10px; background:#f1f2f5; color:var(--ink); transition:background .2s, color .2s}
+.nav-item:hover .nav-ic{background:var(--ink); color:#fff}

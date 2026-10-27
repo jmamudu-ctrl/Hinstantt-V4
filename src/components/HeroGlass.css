@@ -1,0 +1,147 @@
+.hg{
+  position:relative; min-height:100svh; display:flex; flex-direction:column; overflow:hidden;
+  /* the inner column spans the rib grid (outer rib edges), see --grid-* in styles.css */
+  padding:clamp(132px,17vh,190px) var(--grid-margin) clamp(24px,3.4vh,42px);
+  background-color:#ffffff;
+  background-image:url(../assets/hero-bg-gradient.webp);
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  text-align:left;
+}
+
+.hg-vlines, .hg-rows{display:none}
+
+/* animated fluted glass over the static gradient; fades in once the first frame is drawn */
+.hg-fluted{
+  position:absolute; inset:0; z-index:0; width:100%; height:100%; display:block;
+  pointer-events:none; opacity:0; transition:opacity 1.2s ease;
+}
+.hg-fluted.is-ready{opacity:1}
+
+/* flex column: copy sizes to content, stage absorbs the rest -> fits the viewport */
+.hg-inner{
+  position:relative; z-index:4; flex:1 1 auto; min-height:0;
+  width:100%; max-width:var(--grid-max); margin:0 auto;
+  display:flex; flex-direction:column; align-items:center;
+}
+/* copy is left-aligned on the logo: --grid-inset inside the first rib edge */
+.hg-copy{flex:0 0 auto; display:flex; flex-direction:column; align-items:flex-start; width:100%; padding:0 var(--grid-inset); box-sizing:border-box}
+
+.hg-title{
+  margin:0; color:var(--ink); font-weight:600; font-family:'Lora',Georgia,serif;
+  letter-spacing:-.02em; line-height:1.04; max-width:17ch;
+  font-size:clamp(32px, min(5.4vw, 8.2vh), 78px);
+}
+.hg-sub{
+  margin:clamp(14px,2vh,22px) 0 0; max-width:620px; line-height:1.5;
+  font-size:clamp(15px, 1.4vw, 18px); color:rgba(0,21,33,.62);
+}
+.hg-cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-start; margin-top:clamp(20px,2.6vh,30px)}
+.hg-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:48px; padding:0 26px; border-radius:999px; text-decoration:none;
+  font-size:15px; font-weight:600; letter-spacing:-.01em;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.hg-btn-primary{color:#fff; background:var(--ink);}
+.hg-btn-primary:hover{transform:translateY(-1px); background:#0b2230;}
+.hg-btn-ghost{color:var(--ink); background:#fff; border:0;}
+.hg-btn-ghost:hover{transform:translateY(-1px); border-color:rgba(0,21,33,.34)}
+
+
+/* video stage: fills remaining height; frame keeps aspect, scales to fit (no crop) */
+.hg-stage{
+  position:relative; flex:1 1 auto; min-height:0; width:100%;
+  margin-top:clamp(48px,7vh,88px);
+  display:flex; align-items:flex-end; justify-content:center;
+}
+.hg-frame{display:contents}
+/* glass panel: the video's flat backdrop is keyed out (KeyedVideo), so the hero
+   animation shows through, frosted */
+.hg-video{
+  display:block; position:relative; z-index:1;
+  width:auto; height:auto; max-width:min(1280px,100%); max-height:100%;
+  border-radius:0; overflow:hidden;
+}
+/* glass pane behind the keyed video, kept at the video's exact box by HeroGlass.
+   Square and flat: a pane set into the rib grid, not a card floating above it */
+.hg-panel{
+  position:absolute; z-index:0; pointer-events:none; overflow:hidden;
+  background:rgba(255,255,255,.34);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  backdrop-filter:blur(22px) saturate(160%);
+  border:0;
+}
+/* the playing source behind the keyed canvas: 1px, invisible, but on screen */
+.kv-src{position:absolute; left:50%; bottom:0; width:1px; height:1px; opacity:0; pointer-events:none}
+
+/* mobile slot: portrait 4:5, fits without cropping; author the video 1080 x 1350 */
+.hg-mph, .hg-stage.is-mobile .hg-video{
+  width:auto; height:auto; max-width:min(430px,100%); max-height:100%;
+}
+.hg-mph{
+  aspect-ratio:4/5; width:100%; border-radius:0; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+  border:0;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(0,169,224,.12), transparent 60%),
+    radial-gradient(120% 80% at 50% 100%, rgba(111,123,255,.10), transparent 60%),
+    #f3f7fb;
+}
+.hg-mph-tag{font-size:13px; font-weight:600; color:var(--ink); letter-spacing:-.01em}
+.hg-mph-dim{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em; color:rgba(0,21,33,.5)}
+
+/* mobile: compact copy so the whole hero stays in view */
+@media (max-width:680px){
+  .hg{padding:clamp(104px,15vh,140px) var(--grid-margin) clamp(18px,3vh,30px)}
+  .hg-title{font-size:clamp(26px, min(7.6vw, 7.2vh), 40px); max-width:15ch}
+  .hg-sub{margin-top:10px; font-size:clamp(13px,3.6vw,15px); line-height:1.45; max-width:42ch}
+  .hg-cta{margin-top:16px; gap:10px; width:100%; max-width:360px; flex-wrap:nowrap}
+  .hg-btn{flex:1 1 0; height:46px; padding:0 16px}
+  .hg-stage{margin-top:clamp(32px,5vh,48px)}
+}
+
+/* very short viewports: trim the sub so the visual still fits */
+@media (max-height:560px) and (min-width:681px){
+  .hg-sub{display:none}
+}
+
+/* desktop: the video fills the content grid, it always spans the full stage width and
+   scales with it (height follows the aspect ratio), so it is never small with empty space
+   around it. capped at the content width on ultra-wide. */
+@media (min-width:681px){
+  .hg-stage{min-height:clamp(360px, 50vh, 760px)}
+  .hg-video{
+    /* fill the width when there is vertical room, but the stage height (the space below
+       the buttons) is the ceiling: the video scales down to fit and never grows up into
+       the copy block. aspect locked, no crop, no distortion. */
+    width:auto; height:auto; max-width:min(1320px, 100%); max-height:100%;
+  }
+}
+
+/* small phones: a single full-width CTA instead of cramming/stacking two */
+@media (max-width:360px){
+  .hg-btn-ghost{display:none}
+  .hg-cta{max-width:300px}
+}
+
+/* ===== the film hero: the video full-bleed, a shade toward the copy, white type ===== */
+.hg.hg--film{background:#050814; justify-content:flex-end; padding-bottom:clamp(72px, 12vh, 140px); isolation:isolate}
+.hg-film{position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; object-position:center;
+  animation:hgSettle 2.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes hgSettle{from{transform:scale(1.06); opacity:0}to{transform:none; opacity:1}}
+/* the shade: darker at the foot and the left, where the copy sits, clear toward the top right */
+.hg-shade{position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(0deg, rgba(5,8,20,.82) 0%, rgba(5,8,20,.35) 45%, rgba(5,8,20,.15) 100%),
+             linear-gradient(90deg, rgba(5,8,20,.55) 0%, rgba(5,8,20,0) 60%)}
+.hg--film .hg-inner{flex:0 0 auto; align-items:flex-start}
+.hg--film .hg-title{color:#fff; max-width:15ch; font-size:clamp(38px, min(6vw, 9vh), 88px)}
+.hg--film .hg-sub{color:rgba(255,255,255,.78); max-width:600px}
+.hg--film .hg-btn-primary{background:#fff; color:var(--ink)}
+.hg--film .hg-btn-primary:hover{background:#fff}
+.hg--film .hg-btn-ghost{background:rgba(255,255,255,.12); color:#fff; -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px)}
+.hg--film .hg-copy > *{animation:hgUp .9s cubic-bezier(.2,.8,.2,1) both}
+.hg--film .hg-sub{animation-delay:.12s}
+.hg--film .hg-cta{animation-delay:.24s}
+@keyframes hgUp{from{opacity:0; transform:translateY(18px)}}
+@media (prefers-reduced-motion: reduce){ .hg-film, .hg--film .hg-copy > *{animation:none} }

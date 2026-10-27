@@ -1,0 +1,207 @@
+/* ===== module compositions: a few real components floating together ===== */
+.cmp-stage{position:relative; width:100%; height:100%}
+.cmp{position:absolute; inset:0; font-family:'Inter', system-ui, sans-serif; font-size:12.5px; line-height:1.35; color:var(--ink)}
+.cmp-p{position:absolute; box-sizing:border-box; padding:16px 18px; border-radius:14px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,21,33,.05), 0 10px 24px -12px rgba(0,21,33,.18), 0 34px 60px -34px rgba(0,21,33,.35);
+  animation:cmpRise .9s cubic-bezier(.2,.9,.25,1) both, cmpFloat 8s ease-in-out infinite;
+  animation-delay:calc(var(--d) * .25s), calc(var(--d) * -1.7s)}
+.cmp-in{position:relative}
+@keyframes cmpRise{from{opacity:0; transform:translateY(26px) scale(.98)}}
+@keyframes cmpFloat{50%{translate:0 -6px}}
+.cmp-head{margin-bottom:12px}
+.cmp-head b{font-size:13.5px; font-weight:600; letter-spacing:-.01em}
+.cmp small{display:block; font-size:11px; color:rgba(0,21,33,.52)}
+.cmp-line{display:flex; align-items:center; gap:10px; padding:8px 0; box-shadow:0 -1px 0 rgba(0,21,33,.05)}
+.cmp-line:first-of-type{box-shadow:none}
+.cmp-grow{flex:1; min-width:0}
+.cmp-grow b{display:block; font-size:12.5px; font-weight:600}
+.cmp-num{font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap}
+.cmp-flag{width:22px; height:22px; border-radius:50%; object-fit:cover; flex:0 0 auto}
+.cmp-amt{margin:12px 0 8px}
+.cmp-amt b{display:block; margin-top:3px; font-size:24px; font-weight:600; letter-spacing:-.03em; font-variant-numeric:tabular-nums}
+.cmp-rail{display:flex; justify-content:space-between; padding:10px 12px; margin-bottom:12px; border-radius:9px; background:#f6f7f9; font-size:11.5px}
+.cmp-rail span{color:rgba(0,21,33,.5)}
+.cmp-big{font-size:28px; font-weight:600; letter-spacing:-.035em; font-variant-numeric:tabular-nums; margin:2px 0 6px}
+.cmp-spark{display:block; width:100%; height:52px; margin:4px 0 8px; overflow:visible}
+.cmp-spark path{fill:none; stroke:#00a9e0; stroke-width:2; stroke-linecap:round; vector-effect:non-scaling-stroke}
+.cmp-up{color:#1d7a45 !important; font-weight:600}
+.cmp-total{font-weight:600}
+.cmp-total b{font-size:13.5px}
+.cmp-route{display:flex; align-items:center; gap:10px; margin:4px 0 10px; font-size:22px}
+.cmp-route b{font-weight:600; letter-spacing:-.02em}
+.cmp-route span{flex:1; display:grid; place-items:center; height:1px; background:linear-gradient(90deg, rgba(0,21,33,.15), rgba(0,21,33,.15)); color:var(--sky-ink)}
+.cmp-route span svg{background:#fff; padding:0 6px; box-sizing:content-box}
+.cmp-receipt{min-height:220px}
+.cmp-meter{width:70px}
+.cmp-chip--ok{background:#ecf8f0; color:#1d7a45}
+.cmp-chip--blue{background:#eef8fd; color:#0083b0}
+.cmp-chip--warn{background:#fdf3e4; color:#a8620a}
+.cmp-chip--usdc{background:#eaf2ff; color:#2a6df4}
+.ui-track i.is-ok{background:#22b35d}
+.ui-track i.is-warn{background:#ff9f0a}
+.cmp-toggle{width:30px; height:18px; border-radius:999px; background:#dfe2e7; position:relative; transition:background .3s}
+.cmp-toggle i{position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.2); transition:transform .3s}
+.cmp-toggle.is-on{background:#00a9e0}
+.cmp-toggle.is-on i{transform:translateX(12px)}
+.cmp-bump{color:#1d7a45; transform-origin:right center; animation:cmpBump .6s ease}
+@keyframes cmpBump{30%{transform:scale(1.04)}}
+.cmp-feed{display:flex; gap:10px; align-items:flex-start; padding:7px 0; opacity:.35; transition:opacity .5s}
+.cmp-feed.is-on{opacity:1}
+.cmp-feed b{display:block; font-size:12px; font-weight:600}
+
+/* the agent's notes: a small pill-shaped toast */
+.cmp-note{display:flex; align-items:center; gap:10px; font-size:12px; font-weight:500; line-height:1.4}
+.cmp-note-ic{width:22px; height:22px; border-radius:50%; display:grid; place-items:center; flex:0 0 auto; color:#fff}
+.cmp-note--sky .cmp-note-ic{background:#00a9e0}
+.cmp-note--ok .cmp-note-ic{background:#22b35d}
+.cmp-note--warn .cmp-note-ic{background:#ff9f0a}
+.cmp-p:has(> .cmp-in > .cmp-note){padding:12px 16px; border-radius:999px}
+.cmp-p:has(> .cmp-in > .lu-steps), .cmp-p:has(> .cmp-in > .lu-suggest), .cmp-p:has(> .cmp-in > .ui-alert){padding:8px}
+.cmp-p .lu-suggest, .cmp-p .ui-alert{margin:0}
+.cmp-p .ui-alert{position:static; opacity:1; transform:none}
+
+/* the card, on its own */
+.cmp-card{position:absolute; z-index:1; animation:cmpRise .9s cubic-bezier(.2,.9,.25,1) both}
+.cmp-card img{display:block; width:100%; border-radius:5%; box-shadow:0 40px 70px -34px rgba(0,21,33,.6); animation:cmpFloat 8s ease-in-out infinite}
+
+@media (max-width:760px){ .cmp{font-size:10px} .cmp-p{padding:10px 12px} .cmp-big{font-size:20px} .cmp-amt b{font-size:18px} }
+@media (prefers-reduced-motion: reduce){ .cmp-p, .cmp-card, .cmp-card img{animation:none} }
+
+/* an agent note waits out of sight until its moment, then rises in */
+.cmp-p{transition:opacity .5s ease, translate .6s cubic-bezier(.2,.9,.3,1)}
+.cmp-p.is-hidden{opacity:0; animation-play-state:running, paused}
+/* a note inside a panel keeps its row and fades in, so nothing moves past the padding */
+.cmp-reveal{margin-top:12px; opacity:0; transition:opacity .4s ease}
+.cmp-reveal.is-on{opacity:1}
+
+/* ===== the bento: every component in its own rounded card, on a fixed grid =====
+   p1 (the main component) tall on the left, p2 beside it, the agent's moment (lo) under
+   p2, and on the right the big number (st) above the agent at work (ag) */
+.cmp-bento{display:grid; gap:14px; height:auto !important;
+  grid-template-columns:minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .82fr);
+  grid-template-areas:"p1 p2 st" "p1 p2 ag" "p1 lo ag"}
+.cmp-bento > .cmp{display:contents}
+.cmp-bento .cmp > :nth-child(1){grid-area:p1}
+.cmp-bento .cmp > :nth-child(2){grid-area:p2}
+.cmp-bento .cmp > .cmp-low{grid-area:lo}
+.cmp-bento .cmp-stat{grid-area:st}
+.cmp-bento .cmp-agent{grid-area:ag}
+
+/* every cell is a card: white, rounded, a whisper of grid squares fading from a corner */
+.cmp-bento .cmp-p, .cmp-bento .cmp-card, .cmp-cell{
+  position:relative !important; left:auto !important; top:auto !important; bottom:auto !important; width:auto !important;
+  box-sizing:border-box; border-radius:20px; background:#fff; padding:20px; overflow:hidden; isolation:isolate;
+  box-shadow:0 1px 2px rgba(0,21,33,.04), 0 18px 40px -30px rgba(0,21,33,.28);
+  animation:cmpRise .8s cubic-bezier(.2,.9,.25,1) both; animation-delay:calc(var(--d, 0s) * .2)}
+.cmp-bento .cmp-p::before, .cmp-bento .cmp-card::before, .cmp-cell::before{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background-image:linear-gradient(rgba(0,21,33,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(0,21,33,.045) 1px, transparent 1px);
+  background-size:44px 44px; background-position:-1px -1px;
+  -webkit-mask-image:radial-gradient(120% 90% at 100% 0%, #000 0%, transparent 55%); mask-image:radial-gradient(120% 90% at 100% 0%, #000 0%, transparent 55%)}
+.cmp-bento .cmp-p.cmp-low{border-radius:20px; padding:16px 20px}
+.cmp-bento .cmp-p.is-hidden{opacity:1; translate:none}
+.cmp-bento .cmp-p.is-hidden > .cmp-in{opacity:.35}
+.cmp-bento .cmp-in{animation:none}
+/* the card's own cell: the card image centred on a soft tint */
+.cmp-bento .cmp-card{display:grid; place-items:center; background:linear-gradient(160deg, #eef6fb, #f6f2fb); padding:28px}
+.cmp-bento .cmp-card img{width:min(78%, 230px); border-radius:6%; animation:none}
+
+/* the big number */
+.cmp-stat{display:flex; flex-direction:column; justify-content:flex-end; min-height:150px}
+.cmp-stat-v{font-size:clamp(44px, 4.6vw, 64px); font-weight:500; letter-spacing:-.05em; line-height:.95; color:var(--ink)}
+.cmp-stat-l{margin-top:10px; font-size:13.5px; color:rgba(0,21,33,.55)}
+.cmp-stat-s{margin-top:auto; padding-top:18px; font-size:12.5px !important; color:rgba(0,21,33,.45) !important}
+.cmp-stat .cmp-stat-s{order:-1; margin:0 0 auto; padding:0}
+
+/* the agent at work */
+.cmp-agent{display:flex; flex-direction:column; gap:10px; background:linear-gradient(170deg, #0b1630, #050814); color:#fff}
+.cmp-agent::before{opacity:.5; filter:invert(1)}
+.cmp-agent-top{display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600}
+.cmp-agent-top i{width:7px; height:7px; border-radius:50%; background:#30d158; box-shadow:0 0 0 4px rgba(48,209,88,.18)}
+.cmp-agent-top em{margin-left:auto; font-style:normal; font-size:11.5px; font-weight:500; color:rgba(255,255,255,.55)}
+.cmp-agent p{margin:0; font-size:13px; line-height:1.5; color:rgba(255,255,255,.72)}
+.cmp-agent-bar{margin-top:auto; height:3px; border-radius:3px; background:rgba(255,255,255,.1); overflow:hidden}
+.cmp-agent-bar span{display:block; height:100%; width:40%; border-radius:3px; background:linear-gradient(90deg, #00a9e0, #7fd3ff); animation:cmpWork 2.4s ease-in-out infinite}
+@keyframes cmpWork{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+
+/* compact (the homepage tab stage): the two main components and the number, one row */
+.cmp-bento.is-compact{grid-template-columns:minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, .7fr); grid-template-areas:"p1 p2 st"}
+.cmp-bento.is-compact .cmp > .cmp-low{display:none}
+
+@media (max-width: 900px){
+  .cmp-bento, .cmp-bento.is-compact{grid-template-columns:1fr 1fr; grid-template-areas:"p1 p1" "p2 p2" "lo lo" "st ag"}
+  .cmp-bento.is-compact{grid-template-areas:"p1 p1" "p2 st"}
+}
+@media (max-width: 560px){
+  .cmp-bento{grid-template-columns:1fr; grid-template-areas:"p1" "p2" "lo" "st" "ag"}
+  .cmp-bento.is-compact{grid-template-columns:1fr; grid-template-areas:"p1"}
+  .cmp-bento.is-compact > .cmp > :nth-child(2), .cmp-bento.is-compact .cmp-stat{display:none}
+}
+@media (prefers-reduced-motion: reduce){ .cmp-bento .cmp-p, .cmp-cell, .cmp-agent-bar span{animation:none} }
+
+/* taller cells: generous rows, each component centred in its card */
+.cmp-bento{grid-template-rows:minmax(220px, auto) minmax(220px, auto) minmax(170px, auto)}
+.cmp-bento .cmp-p, .cmp-bento .cmp-cell{display:flex; flex-direction:column; justify-content:center; padding:26px}
+.cmp-bento .cmp-p > .cmp-in{width:100%}
+.cmp-bento .cmp-stat{justify-content:flex-end}
+.cmp-bento .cmp-agent{justify-content:flex-start}
+.cmp-bento .cmp-card img{width:min(70%, 260px)}
+/* compact (homepage tabs): the cards fill the stage's height */
+.cmp-bento.is-compact{grid-template-rows:minmax(0, 1fr); align-content:stretch}
+/* bigger content to fill the taller cards */
+.cmp-bento:not(.is-compact) .cmp{font-size:14px}
+.cmp-bento:not(.is-compact) .cmp-head b{font-size:15.5px}
+.cmp-bento:not(.is-compact) .cmp small{font-size:12px}
+.cmp-bento:not(.is-compact) .cmp-amt b{font-size:30px}
+.cmp-bento:not(.is-compact) .cmp-big{font-size:34px}
+.cmp-bento:not(.is-compact) .cmp-line{padding:11px 0}
+.cmp-bento:not(.is-compact) .ui-stat{padding:14px}
+.cmp-bento:not(.is-compact) .ui-num{font-size:22px}
+.cmp-bento:not(.is-compact) .cmp-p.cmp-low .cmp-note{font-size:13.5px}
+.cmp-bento .ui-stats{grid-template-columns:repeat(2, minmax(0, 1fr))}
+/* each component starts at the top of its card */
+.cmp-bento .cmp-p, .cmp-bento .cmp-cell:not(.cmp-stat){justify-content:flex-start}
+.cmp-bento .cmp-card{place-items:start center}
+
+/* ===== loading placeholders in the empty part of each card ===== */
+.cmp-skel{display:none}
+.cmp-bento .cmp-skel{display:block; flex:1 1 0; min-height:0; overflow:hidden; margin-top:14px;
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 55%, transparent 100%); mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 55%, transparent 100%)}
+.cmp-skel > span{display:none}
+/* the card picks the structure that matches what it holds */
+.cmp-p:has(.cmp-line, .ui-tx, .lu-flight, .cmp-feed, .ui-bar-row, .lu-inv-line, .lu-timeline) .sk-rows{display:flex}
+.cmp-p:has(.ui-stats, .lu-docs, .lu-swap) .sk-stats{display:grid}
+.cmp-p:not(:has(.cmp-line, .ui-tx, .lu-flight, .cmp-feed, .ui-bar-row, .lu-inv-line, .lu-timeline, .ui-stats, .lu-docs, .lu-swap)) .sk-fields{display:flex}
+.cmp-p:has(.ui-stats, .lu-docs, .lu-swap) .sk-rows{display:none}
+.sk-rows, .sk-fields{flex-direction:column}
+.sk-row{display:flex; align-items:center; gap:10px; padding:10px 0; box-shadow:0 -1px 0 rgba(0,21,33,.05)}
+.sk-av{width:24px; height:24px; border-radius:50%; flex:0 0 auto}
+.sk-lines{flex:1; display:flex; flex-direction:column; gap:6px}
+.sk-lines i:first-child{width:52%; height:9px}
+.sk-lines i:last-child{width:32%; height:7px}
+.sk-amt{width:56px; height:9px; flex:0 0 auto}
+.sk-stats{grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px}
+.sk-stat{display:flex; flex-direction:column; gap:8px; padding:12px; border-radius:10px; background:#f7f8fa}
+.sk-stat i:first-child{width:50%; height:7px}
+.sk-stat i:last-child{width:70%; height:14px}
+.sk-field{display:flex; justify-content:space-between; align-items:center; padding:12px; margin-bottom:8px; border-radius:10px; background:#f7f8fa}
+.sk-field i:first-child{width:28%; height:8px}
+.sk-field i:last-child{width:36%; height:9px}
+/* the bars and the shimmer that sweeps across them */
+.cmp-skel i{display:block; border-radius:6px; background:linear-gradient(90deg, #eceef2 0%, #eceef2 40%, #f7f8fb 50%, #eceef2 60%, #eceef2 100%);
+  background-size:300% 100%; animation:skShimmer 1.8s linear infinite}
+.sk-row:nth-child(2n) i{animation-delay:-.3s}
+.sk-row:nth-child(3n) i{animation-delay:-.6s}
+@keyframes skShimmer{from{background-position:100% 0}to{background-position:-200% 0}}
+@media (prefers-reduced-motion: reduce){ .cmp-skel i{animation:none} }
+/* the agent card's loading activity, in dark tones */
+.cmp-agent-log{flex:1 1 0; min-height:0; overflow:hidden; display:flex; flex-direction:column; gap:12px; margin-top:6px;
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, transparent 100%); mask-image:linear-gradient(180deg, #000 0%, transparent 100%)}
+.cmp-agent-log > span{display:flex; align-items:center; gap:10px}
+.cmp-agent-log i{display:block; height:8px; border-radius:6px; background:linear-gradient(90deg, rgba(255,255,255,.07) 40%, rgba(255,255,255,.16) 50%, rgba(255,255,255,.07) 60%); background-size:300% 100%; animation:skShimmer 1.8s linear infinite}
+.cmp-agent-log i:first-child{width:8px; height:8px; border-radius:50%; flex:0 0 auto}
+.cmp-agent-log i:last-child{flex:1; max-width:78%}
+.cmp-agent-log > span:nth-child(2n) i:last-child{max-width:60%}
+.cmp-agent-log > span:nth-child(3n) i:last-child{max-width:70%}
+.cmp-bento.is-compact .cmp-agent-log{display:none}
+/* the homepage row: cards at most 400px tall, centred in the stage however tall the window is */
+.cmp-bento.is-compact{grid-template-rows:minmax(0, 400px); align-content:center}
